@@ -1,0 +1,107 @@
+@import url("reset.css");
+
+/* * {
+    color:chocolate;
+} */
+
+a {
+    color: blue;
+}
+
+.last {
+    color: rgb(252, 252, 100);
+}
+
+#title {
+    color: rgb(0, 255, 247);
+}
+
+[target="_blank"] {
+    color: rgb(0, 221, 255);
+}
+
+[class*="-text"] {
+    color: black;
+}
+
+div.time_zone {
+    color: blueviolet;
+}
+
+.transport,
+.religion {
+    color: salmon;
+}
+
+.population h2 {
+    color: chartreuse;
+}
+
+.population p {
+    color: darkblue;
+}
+
+.item .link {
+    color: darkred;
+}
+
+.first-layer > p {
+    color: deeppink;
+}
+
+.first-layer ~ p {
+    color: rgb(255, 0, 242);
+}
+
+.first-layer + p {
+    color: seagreen;
+}
+
+.text.red {
+    color: red;
+}
+
+.text .yellow {
+    color:rgb(252, 252, 100);
+}
+
+.conclusion * {
+    color: rgb(0, 255, 17);
+}
+/* _____________________________________________________ */
+/* Додаткове завдання: */
+/* Перший рівень вкладеності */
+ul > li {
+    color: red;
+}
+
+ul > li + li,
+ul > li + li ~ li {
+    color: green;
+}
+
+/* Другий рівень вкладеності */
+ul ul > li {
+    color: blue;
+}
+
+ul ul > li + li,
+ul ul > li + li ~ li {
+    color: orange;
+}
+
+/* Третій рівень вкладеності */
+ul ul ol > li {
+    color: #4597f7;
+}
+
+ul ul ol > li + li,
+ul ul ol > li + li ~ li {
+    color: #5d5d5d;
+}
+
+ul ul li span {
+    color: #a0f0fc;
+}
+
+/* _____________________________________________________ */
