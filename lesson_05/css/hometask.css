@@ -57,7 +57,7 @@ body {
 }
 
 .advantages__header-text {
-    font-style: 14px;
+    font-size: 14px;
     font-weight: 500;
     font-family: "Circular Std", sans-serif;
     line-height: 1.42;
@@ -76,7 +76,7 @@ body {
     display: inline-block;
     max-width: 230px;
     width: 100%;
-    min-height: 300px;
+    min-height: 288px;
     background-color: #fff;
     margin-right: 30px;
     box-sizing: border-box;
@@ -86,7 +86,6 @@ body {
 
 .advantages__card-top {
     vertical-align: top;
-    margin-bottom: 50px;
 }
 
 .advantages__card-bottom {
