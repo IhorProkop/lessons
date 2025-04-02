@@ -55,7 +55,7 @@
     font-weight: 700;
 }
 
-.ecobazar__list {
+.ecobazar__menu {
     margin-bottom: 20px;
 }
 
@@ -129,6 +129,7 @@
     border-right: solid 1px rgba(192, 183, 232, 0.33);
     padding-right: 45px;
     margin-right: 45px;
+    padding-top: 25px;
 }
 
 .contacts__phone {
@@ -137,11 +138,13 @@
     margin-left: 30px;
     padding-right: 45px;
     margin-right: 45px;
+    padding-top: 25px;
 }
 
 .contacts__mail {
     background-image: url("../img/mail.svg");
     margin-left: 20px;
+    padding-top: 25px;
 }
 
 .contacts__text {
@@ -154,7 +157,6 @@
     font-weight: 700;
     color: white;
     margin-bottom: 10px;
-    margin-top: 25px;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------- */
@@ -171,29 +173,35 @@
     vertical-align: middle;
 }
 
-.about__image img {
-    border-radius: 240px 100px;
-}
-
 .about__image {
     display: inline-block;
     margin-right: 108px;
+    max-width: 524px;
+}
+
+.about__image img {
+    border-radius: 45% 19%;
+}
+
+.about__title {
+    font-size: 36px;
+    margin-bottom: 42px;
 }
 
 .about__title-top {
-    font-size: 36px;
+    display: inline-block;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 .about__title-bottom {
-    font-size: 36px;
+    display: inline-block;
     font-weight: 300;
-    margin-bottom: 42px;
 }
+
 .about__text {
     margin-bottom: 45px;
-    line-height: normal;
+    line-height: 1.5;
 }
 .about__button {
     border-radius: 40px;
