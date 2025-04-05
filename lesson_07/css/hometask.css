@@ -1,0 +1,417 @@
+@import url("reset.css");
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+[class*="__container"] {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.header {
+    background-color: #1a1a1a;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    color: #FE3F3F;
+    text-shadow: 2px 2px 2px lightseagreen;
+    margin-bottom: 20px;
+}
+
+.header__content ul>li {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.header__content ul>li>a {
+    color: white;
+}
+
+.header__content ul>li>a:hover {
+    color: #FFC107;
+    text-decoration: underline;
+    text-shadow: 0px 0px 10px #FFC107;
+}
+
+.header__content ul>li>a:focus {
+    color: #FFC107;
+    text-decoration: underline;
+}
+
+.header__content>*:last-child {
+    margin: 0;
+}
+
+/* .header__link:visited {
+    color: #8246b6;
+} */
+/* ПОМІТИВ ЦІКАВУ ОСОБЛИВІСТЬ ПРИ ЗАДАНІ КОЛЬОРУ ТЕКСТУ ПОСИЛАННЯ ДЛЯ ПСЕВДОКЛАСУ :visited. 
+   Коли вона присутня і змінює колір для відвіданих посилань, 
+   то зміна кольори при використанні псевдокласів 
+   hover, active нівелюється і перестає регувати*/
+
+/* ------------------------------------------------------------------------------- */
+
+.usmle-card>*:not(:last-child):not(.usmle-card__label) {
+    margin-bottom: 20px;
+}
+
+.usmle {
+    padding-top: 105px;
+    padding-bottom: 54px;
+    background-color: #ffffff;
+}
+
+.usmle__content>a {
+    background-color: #00c2c2;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    padding: 10px 34px;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.usmle__content>h2 {
+    font-size: 38px;
+    color: #412672;
+    margin-bottom: 31px;
+    line-height: 1.21;
+}
+
+.usmle__content>h2>strong:first-child {
+    font-weight: 700;
+}
+
+.usmle__content>h2>strong:nth-child(2) {
+    font-weight: 400;
+    /*БУДЕ ВІДОБРАЖАТИСЬ ЯК ЖИРНИЙ ШРИФТ(ЯКЩО НЕ ВКАЗАТИ), ТОМУ Я ЦЕ ВКАЗУЮ*/
+}
+
+.usmle__cards {
+    font-size: 0;
+    visibility: hidden;
+}
+
+.usmle__cards:target {
+    visibility: visible;
+}
+
+.usmle__cards:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.usmle-card {
+    display: inline-block;
+    padding: 20px;
+    background-color: #ffffff;
+    width: 386px;
+    min-height: 628px;
+    vertical-align: top;
+    text-align: center;
+    box-shadow: 0px 384px 108px 0px rgba(0, 0, 0, 0.00),
+        0px 246px 98px 0px rgba(0, 0, 0, 0.01),
+        0px 138px 83px 0px rgba(0, 0, 0, 0.05),
+        0px 62px 62px 0px rgba(0, 0, 0, 0.09),
+        0px 15px 34px 0px rgba(0, 0, 0, 0.10);
+}
+
+.usmle-card:not(:last-child) {
+    margin-right: 20px;
+}
+
+.usmle-card__img {
+    height: 196px;
+}
+
+.usmle-card__img:hover {
+    box-shadow: 0px 15px 34px 0px rgb(19, 10, 10);
+}
+
+.usmle-card__img img {
+    width: 100%;
+    height: 100%;
+}
+
+.usmle-card__label {
+    font-size: 15px;
+    background-color: #FFC107;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    border-radius: 40px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.usmle-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.22;
+}
+
+.usmle-card__text {
+    font-size: 15px;
+    line-height: 1.27;
+    min-height: 213px;
+}
+
+.usmle-card>a {
+    background-color: #FE3F3F;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    padding: 17px 94px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.usmle-card>a:hover {
+    background-color: #c90e0e;
+}
+
+.usmle-card>a:active {
+    background-color: #550000;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.faculty-card>*:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.faculty {
+    background-color: #412672;
+    padding-top: 61px;
+    padding-bottom: 102px;
+}
+
+/* .faculty__title {
+    font-size: 38px;
+    color: white;
+    margin-bottom: 31px;
+} */
+
+.faculty__content > h2 {
+    font-size: 38px;
+    color: white;
+    margin-bottom: 31px;
+}
+
+.faculty__content > h2 > strong:first-child {
+    font-weight: 400;
+    /*БУДЕ ВІДОБРАЖАТИСЬ ЯК ЖИРНИЙ ШРИФТ(ЯКЩО НЕ ВКАЗАТИ), ТОМУ Я ЦЕ ВКАЗУЮ*/
+    line-height: 1.2;
+    display: inline-block;
+}
+
+.faculty__content > h2 > strong:nth-child(2) {
+    font-weight: 700;
+    line-height: 1.2;
+    display: inline-block;
+}
+
+.faculty__cards {
+    font-size: 0;
+}
+
+.faculty__cards:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.faculty-card {
+    display: inline-block;
+    width: 386px;
+    background-color: #fff;
+    color: black;
+    padding: 20px;
+    min-height: 436px;
+    vertical-align: top;
+}
+
+.faculty-card:not(:last-child) {
+    margin-right: 20px;
+}
+
+.faculty-card:hover {
+    background-color: #FFBE48;
+}
+
+.faculty-card__image {
+    height: 266px;
+}
+
+.faculty-card__image img {
+    height: 100%;
+    width: 100%;
+}
+
+.faculty-card > h3 {
+    font-size: 22px;
+    color: black;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.faculty-card__text {
+    color: #4F4F4F;
+    font-size: 15px;
+    line-height: 1.27;
+    min-height: 76px;
+}
+
+.faculty-card > a {
+    color: #FE3F3F;
+    font-size: 15px;
+    line-height: 1.27;
+}
+
+.faculty-card a:hover {
+    text-decoration: underline;
+    color: #c90e0e;
+}
+
+.faculty-card a:active {
+    color: #0f0000;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.announcement__content>*:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.announcement {
+    background-color: white;
+    padding: 55px 0;
+}
+
+.announcement__img {
+    max-width: 764px;
+    display: inline-block;
+    margin-right: -400px;
+}
+
+.announcement__img::after {
+    content: "";
+    width: 190px;
+    height: 15px;
+    background-image: url("../img/circles.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.announcement__img img {
+    width: 100%;
+    height: 100%;
+}
+
+.announcement__content {
+    max-width: 518px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 90px;
+}
+
+.announcement__content > h2 {
+    font-size: 34px;
+    color: #412672;
+}
+
+.announcement__content > h2 > strong:first-child {
+    display: inline-block;
+    line-height: 1.2;
+    font-weight: 400;
+    /*БУДЕ ВІДОБРАЖАТИСЬ ЯК ЖИРНИЙ ШРИФТ(ЯКЩО НЕ ВКАЗАТИ), ТОМУ Я ЦЕ ВКАЗУЮ*/
+}
+
+.announcement__content > h2 > strong:nth-child(2) {
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.announcement__text {
+    font-size: 22px;
+    line-height: 1.22;
+    color: #412672;
+}
+
+.announcement__content > ul > li {
+    color: #4F4F4F;
+    font-size: 20px;
+    padding-left: 38px;
+    line-height: 1.35;
+}
+
+.announcement__content > ul > li:not(:last-child) {
+    margin-bottom: 21px;
+}
+
+.announcement__content > ul > li::before {
+    content: "";
+    width: 29px;
+    height: 29px;
+    background: url("../img/checkmark.svg");
+    background-repeat: no-repeat;
+    display: block;
+    margin-left: -40px;
+    margin-bottom: -28px;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer__content>*:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.footer__content>a {
+    padding: 15px 50px;
+    background-color: #FE3F3F;
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 10px white;
+}
+
+.footer__content>a:hover {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(248, 255, 0, 1) 0%, rgba(255, 0, 0, 1) 100%, rgba(0, 212, 255, 1) 100%, rgba(9, 9, 121, 1) 100%);
+}
+
+.footer__content>a:active {
+    box-shadow: 0px 2px 5px white;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 0%, rgba(248, 255, 0, 1) 100%, rgba(0, 212, 255, 1) 100%, rgba(9, 9, 121, 1) 100%);
+}
+
+.footer__content>p {
+    font-size: 18px;
+}

@@ -1,0 +1,140 @@
+@import url("reset.css");
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+[class*="__container"] {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body{
+    background-color: #1a7585;
+}
+
+.game__title {
+    font-size: 40px;
+    color: rgb(244, 214, 214);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 4px;
+}
+
+.game__content {
+    padding: 20px;
+}
+
+.block:not(:first-child) {
+    visibility: hidden;
+}
+
+.block1 {
+    background-color: #ff8888;
+    width: 100px;
+    height: 50px;
+}
+
+.block2 {
+    width: 200px;
+    height: 45px;
+    margin-left: 100px;
+    margin-top: -45px;
+    background-color: #15ff44;
+}
+
+.block3 {
+    height: 200px;
+    width: 40px;
+    margin-left: 260px;
+    background-color: #15a9ff;
+}
+
+.block4 {
+    width: 200px;
+    height: 35px;
+    margin-left: 300px;
+    margin-top: -35px;
+    background-color: #ef15ff;
+}
+
+.block5 {
+    width: 30px;
+    height: 200px;
+    margin-left: 500px;
+    margin-top: -35px;
+    background-color: #ff154f;
+}
+
+.block6 {
+    width: 200px;
+    height: 25px;
+    margin-left: 500px;
+    margin-top: -25px;
+    background-color: #e0ff15;
+}
+
+.block7 {
+    width: 20px;
+    height: 200px;
+    margin-left: 700px;
+    margin-top: -25px;
+    background-color: #ffc815;
+}
+
+.block8 {
+    width: 200px;
+    height: 15px;
+    margin-left: 700px;
+    margin-top: -15px;
+    background-color: #78deca;
+}
+
+.block9 {
+    width: 10px;
+    height: 200px;
+    margin-left: 900px;
+    margin-top: -15px;
+    background-color: #ff1515;
+}
+
+
+.block10 {
+    width: 200px;
+    height: 5px;
+    margin-left: 900px;
+    margin-top: -5px;
+    background-color: #15ff15;
+}
+
+.block11 {
+    width: 5px;
+    height: 200px;
+    margin-left: 1100px;
+    margin-top: -200px;
+    background-color: #ff00f7;
+}
+
+.block12 {
+    width: 5px;
+    height: 650px;
+    margin-left: 1100px;
+    margin-top: -750px;
+    background-color: #f2ff00;
+}
+
+.block13 {
+    width: 50px;
+    height: 50px;
+    margin-left: 1103px;
+    margin-top: -650px;
+    background-color: #ffffff;
+}
+
+.block:hover + .block, .block:hover {
+    visibility: visible;
+}
