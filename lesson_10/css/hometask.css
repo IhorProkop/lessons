@@ -203,12 +203,14 @@ body {
     font-weight: 700;
     margin-bottom: 13px;
     line-height: 1.3;
+    font-family: "CircularStd", sans-serif;
 }
 
 .solutions__description {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 39px;
+    font-family: "Roboto", sans-serif;
 }
 
 .solutions__button {
@@ -217,6 +219,7 @@ body {
     padding: 22px 26px;
     font-size: 18px;
     font-weight: 500;
+    font-family: "Roboto", sans-serif;
 }
 
 .solutions__button:hover {
