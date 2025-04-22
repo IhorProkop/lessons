@@ -327,6 +327,11 @@ body {
     font-weight: 400;
 }
 
+.featured-item__name:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .item-price__number {
     font-size: 16px;
     line-height: 1.5;
