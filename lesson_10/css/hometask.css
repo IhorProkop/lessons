@@ -17,7 +17,6 @@ html {
 }
 
 body {
-    background-color: #0f172a;
     font-family: "Poppins", sans-serif;
 }
 
@@ -108,16 +107,39 @@ body {
 
 .solutions {
     background-color: #5A54F2;
+    position: relative;
+}
+
+.solutions::before,
+.solutions::after {
+    position: absolute;
+    left: -5%;
+    width: 110%;
+    height: 75px;
+    content: "";
+}
+
+.solutions::before {
+    top: 0;
+    border-radius: 0% 0% 50% 50% / 0% 0% 100% 100%;
+    background-color: #fff;
+}
+
+.solutions::after {
+    bottom: 0;
+    border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%;
+    background-color: #231F8B;
 }
 
 .solutions__body {
     position: relative;
-    z-index: 0;
+    z-index: 1;
 }
 
 .solutions__item {
     color: white;
     font-size: 0;
+    position: relative;
 }
 
 .solutions__item:nth-child(even) {
@@ -129,23 +151,23 @@ body {
     padding-left: 50px;
 }
 
-.solutions__item:nth-child(odd)::before {
+.solutions__container::before {
     content: "";
     position: absolute;
-    z-index: -10;
-    top: 34%;
-    left: -5%;
+    z-index: 0;
+    top: 16%;
+    left: 20%;
     background: url("../img/solutions-decor-left.svg") no-repeat;
     width: 100%;
     height: 100%;
 }
 
-.solutions__item:nth-child(even)::after {
+.solutions__container::after {
     content: "";
     position: absolute;
-    z-index: -10;
+    z-index: 0;
     top: 48%;
-    left: 72%;
+    left: 62%;
     background: url("../img/solutions-decor-right.svg") no-repeat;
     width: 100%;
     height: 100%;
@@ -154,7 +176,7 @@ body {
 .solutions__img-block {
     max-width: 430px;
     display: inline-block;
-} 
+}
 
 .solutions__img-block img {
     height: 100%;
@@ -162,12 +184,12 @@ body {
     border-radius: 20px;
 }
 
-.solutions__img-block:nth-child(odd) {
+.solutions__img-block--top {
     margin-right: 70px;
     box-shadow: -25px 20px 44px 0px rgba(84, 48, 209, 0.40);
 }
 
-.solutions__img-block:nth-child(even) {
+.solutions__img-block--bottom {
     box-shadow: 22px 42px 44px 0px rgba(0, 0, 0, 0.30);
 }
 
@@ -178,21 +200,13 @@ body {
 
 .solutions__item:nth-child(even) > .solutions__content {
     margin-right: 70px;
-}
-
-.solutions__item:first-child {
-    position: relative;
-    top: -63px;
+    max-width: 506px;
+    vertical-align: top;
 }
 
 .solutions__item:nth-child(odd) > .solutions__content {
     max-width: 602px;
     vertical-align: middle;
-}
-
-.solutions__item:nth-child(even) > .solutions__content {
-    max-width: 506px;
-    vertical-align: top;
 }
 
 .solutions__item:not(:last-child) {
@@ -229,6 +243,7 @@ body {
 }
 
 
+
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------  */
 
 
@@ -236,7 +251,10 @@ body {
     font-family: "Poppins", sans-serif;
     padding: 80px 0;
     background-color: white;
+    position: relative;
+    z-index: 10;
 }
+
 .featured-products__container {
     max-width: 1370px;
 }
@@ -253,6 +271,7 @@ body {
     display: inline-block;
     vertical-align: middle;
 }
+
 .block-header__link {
     color: #00B207;
     line-height: 1.5;
@@ -275,7 +294,7 @@ body {
 }
 
 .featured-products__items {
-    margin-bottom: 26px;
+    font-size: 0;
 }
 
 .featured-item {
@@ -286,11 +305,35 @@ body {
     border-radius: 8px;
     display: inline-block;
     position: relative;
-    font-size: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.featured-item__icon-group {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    z-index: 5;
+}
+
+.featured-item__icon-group a {
+    display: block;
+}
+
+.featured-item__icon-group a:not(:last-child) {
+    margin-bottom: 6px;
 }
 
 .featured-item:hover {
-    box-shadow: 0 0 3px #0f172a, 0 0 3px #0f172a, 0 0 3px #0f172a, 0 0 5px #0f172a;
+    border: 1px solid #2C742F;
+    box-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
+}
+
+.featured-item:hover .featured-item__shopping-bag-icon svg path {
+    stroke : white;
+}
+
+.featured-item:hover .featured-item__shopping-bag-icon {
+    background-color: #00B207;
 }
 
 .featured-item:not(:last-child) {
@@ -305,10 +348,7 @@ body {
     color: white;
     font-size: 14px;
     line-height: 1.5;
-}
-
-.featured-item__sale-badge:hover {
-    background-color: #b63b39;
+    z-index: 5;
 }
 
 .featured-item__product-img-block {
@@ -322,15 +362,33 @@ body {
 }
 
 .featured-item__name {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #4D4D4D;
-    font-weight: 400;
+    max-width: 90%;
 }
 
-.featured-item__name:hover {
-    text-decoration: underline;
+.featured-item__name a {
+    color: #4D4D4D;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-decoration: none;
     text-underline-offset: 3px;
+}
+  
+.featured-item__name a:hover {
+    color: #000;
+    text-decoration: underline;
+}  
+
+.featured-item__img-link {
+    transition: all 0.3s ease-in-out;
+}
+
+.featured-item__img-link:hover {
+    transform: scale(1.05);
+}
+
+.item-price {
+    max-width: 90%;
 }
 
 .item-price__number {
@@ -346,11 +404,11 @@ body {
     margin-right: 4px;
 }
 
-
 .item-price__number--old {
     color: #999;
     text-decoration: line-through;
 }
+
 .featured-item__shopping-bag-icon {
     background-color: #F2F2F2;
     padding: 10px;
@@ -358,6 +416,8 @@ body {
     position: absolute;
     bottom: 35px;
     right: 15px;
+    z-index: 5;
+    transition: all 0.3s ease-in-out;
 }
 
 .featured-item__shopping-bag-icon svg {
@@ -365,21 +425,11 @@ body {
     height: 20px;
 }
 
-.featured-item__shopping-bag-icon:hover svg path {
-    stroke : white;
-}
-
-.featured-item__shopping-bag-icon:hover {
-    background-color: #00B207;
-}
-
 .featured-item__heart-icon {
     background-color: #F2F2F2;
     padding: 10px;
     border-radius: 50%;
-    position: absolute;
-    top: 16px;
-    right: 15px;
+    transition: all 0.3s ease-in-out;
 }
 
 .featured-item__heart-icon svg {
@@ -387,26 +437,32 @@ body {
     height: 20px;
 }
 
+.featured-item__heart-icon svg path {
+    transition: all 0.3s ease-in-out;
+}
+
 .featured-item__heart-icon:hover svg path {
     stroke : white;
 }
 
 .featured-item__heart-icon:hover {
-    background-color: #ff0000;
+    background-color: #00B207;
 }
 
 .featured-item__eye-icon {
     background-color: #F2F2F2;
     padding: 10px;
     border-radius: 50%;
-    position: absolute;
-    top: 67px;
-    right: 15px;
+    transition: all 0.3s ease-in-out;
 }
 
 .featured-item__eye-icon svg {
     width: 20px;
     height: 20px;
+}
+
+.featured-item__eye-icon svg path {
+    transition: all 0.3s ease-in-out;
 }
 
 .featured-item__eye-icon:hover svg path {
@@ -446,10 +502,12 @@ body {
     height: 210px;
     text-align: center;
     margin-bottom: 15px;
+    transition: all 0.2s ease-in-out;
 }
 
 .item-categories:hover {
-    box-shadow: inset 0 0 10px 3px #7d7d7d;
+    border: 1px solid #2C742F;
+    box-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
 }
 
 .item-categories:not(:last-child) {
