@@ -1,0 +1,1078 @@
+@import url(reset.css);
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: clip;
+}
+
+[class*="__container"] {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+.header {
+    padding-top: 30px;
+    margin-bottom: 50px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    backdrop-filter: blur(1.5px);
+}
+.header__container {
+    max-width: 1000px;
+}
+.header__body {
+    background-color: #4a4a4a;
+    padding: 20px;
+    border-radius: 20px;
+}
+.header__title {
+    font-size: 40px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 200px;
+    vertical-align: middle;
+    color: antiquewhite;
+}
+.header__menu {
+    display: inline-block;
+}
+.header__item {
+    display: inline-block;
+}
+.header__item:not(:last-child) {
+    margin-right: 50px;
+}
+.header__link {
+    font-size: 25px;
+}
+.animated__underline {
+    position: relative;
+    padding-bottom: 5px;
+}
+.animated__underline::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #eaff00;
+    transition-property: width;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    display: block;
+}
+.animated__underline:hover::after {
+    width: 100%;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+@keyframes game-ending {
+    0% {
+        filter: none;
+    }
+    100% {
+        filter: blur(5px);
+    }
+}
+
+@keyframes text-appearance {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.chess__board {
+    animation-name: game-ending;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 100s;
+}
+
+.chess__game-ending {
+    animation-name: text-appearance;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 100s;
+    position: absolute;
+    top: 610px;
+    left: 1020px;
+    font-size: 100px;
+    font-family: "Exo 2", sans-serif;
+    z-index: 5;
+    color: rgb(254, 93, 93);
+    opacity: 0;
+}
+
+/* ANIMATED INTRODUCTION */
+@keyframes first-opponent-introduction {
+    0% {
+        position: relative;
+        z-index: 2;
+        transform: translate(0px, 0px);
+        z-index: 10;
+    }
+    50% {
+        position: relative;
+        z-index: 2;
+        transform: translate(300px, 100px);
+        z-index: 10;
+        scale: 2;
+        backdrop-filter: blur(2px);
+    }
+    100% {
+        position: relative;
+        z-index: 10;
+        transform: translateX(50px);
+    }
+}
+
+@keyframes second-opponent-introduction {
+    0% {
+        position: relative;
+        z-index: 2;
+        transform: translate(0px, 0px);
+        z-index: 10;
+    }
+    50% {
+        position: relative;
+        z-index: 2;
+        transform: translate(300px, -150px);
+        z-index: 10;
+        scale: 2;
+        backdrop-filter: blur(2px);
+    }
+    100% {
+        position: relative;
+        z-index: 10;
+        transform: translateX(50px);
+    }
+}
+
+.chess__player--first,
+.chess__player--second {
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.chess__player--first {
+    animation-name: first-opponent-introduction;
+}
+
+.chess__player--second {
+    animation-name: second-opponent-introduction;
+}
+
+.chess__player {
+    font-size: 20px;
+}
+
+.chess__player-picture {
+    width: 150px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.chess__player-name {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.chess__player-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.chess__player-content > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+.chess__player-rating {
+    font-size: 16px;
+    color: #a0a0a0;
+    display: inline-block;
+}
+
+.chess__board {
+    display: block;
+}
+
+.chess__board-row {
+    font-size: 0;
+}
+.chess__board-square {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: #eae9d2;
+    position: relative;
+}
+
+.chess__board-square img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transform: translate(-50%, -50%);
+}
+  
+
+.chess__board-row:nth-child(even) .chess__board-square:nth-child(odd),
+.chess__board-row:nth-child(odd) .chess__board-square:nth-child(even) {
+  background-color: #4b7399;
+}
+
+
+/* MOVEMENT */
+/* ________________________________________________________________________________________________________________________________________ */
+
+/* -------------------------------------------------- */
+.white-pawn-first img {
+    animation: white-pawn-first-move1 0.5s ease-in-out 81s forwards
+}
+/* WHITE-PAWN-FIRST */
+@keyframes white-pawn-first-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -150px; left: 50px; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-pawn-second img {
+    animation: white-pawn-second-move1 0.5s ease-in-out 79s forwards;
+}
+/* WHITE-PAWN-SECOND */
+@keyframes white-pawn-second-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -50px; left: 150px;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-pawn-third img {
+    animation: white-pawn-third-move1 0.5s ease-in-out 65s forwards,
+               white-pawn-third-move2 0.3s ease-in-out 78s forwards;
+}
+/* WHITE-PAWN-THIRD */
+@keyframes white-pawn-third-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -50px; left: 50px;}
+  }
+@keyframes white-pawn-third-move2 {
+    0%   { top: -50px; left: 50px; }
+    100% { top: -50px; left: 50px; display: none;}
+  }  
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-pawn-forth img {
+    animation: white-pawn-forth-move1 0.5s ease-in-out 7s forwards,
+               white-pawn-forth-move2 0.3s ease-in-out 32s forwards;
+}
+/* WHITE-PAWN-FORTH */
+@keyframes white-pawn-forth-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -150px; left: 50px;}
+  }
+@keyframes white-pawn-forth-move2 {
+    0%   { top: -150px; left: 50px; }
+    100% { top: -150px; left: 50px; display: none;}
+  }  
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-pawn-fifth img {
+    animation: white-pawn-fifth-move1 0.5s ease-in-out 13s forwards,
+               white-pawn-fifth-move2 0.5s ease-in-out 31s forwards,
+               white-pawn-fifth-move3 0.5s ease-in-out 33s forwards,
+               white-pawn-fifth-move4 0.5s ease-in-out 35s forwards,
+               white-pawn-fifth-move5 0.5s ease-in-out 39s forwards,
+               white-pawn-fifth-move6 0.3s ease-in-out 40s forwards;
+}
+/* WHITE-PAWN-FIFTH */
+@keyframes white-pawn-fifth-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -50px; left: 50px;}
+  }
+@keyframes white-pawn-fifth-move2 {
+    0%   { top: -50px; left: 50px; }
+    100% { top: -150px; left: 50px;}
+  }  
+@keyframes white-pawn-fifth-move3 {
+    0%   { top: -150px; left: 50px; }
+    100% { top: -250px; left: -50px;}
+  }  
+@keyframes white-pawn-fifth-move4 {
+    0%   { top: -250px; left: -50px; }
+    100% { top: -350px; left: 50px;}
+  }  
+@keyframes white-pawn-fifth-move5 {
+    0%   { top: -350px; left: 50px; }
+    100% { top: -450px; left: 150px;}
+  }  
+@keyframes white-pawn-fifth-move6 {
+    0%   { top: -450px; left: 150px; }
+    100% { top: -450px; left: 150px; display: none;}
+  }  
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+
+/* WHITE-PAWN-SIXTH */
+/* ХОДИ ВІДСУТНІ */
+
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-pawn-seventh img {
+    animation: white-pawn-seventh-move1 0.5s ease-in-out 59s forwards
+}
+/* WHITE-PAWN-SEVENTH */
+@keyframes white-pawn-seventh-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -50px; left: 50px;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-pawn-eighth img {
+    animation: white-pawn-eighth-move1 0.5s ease-in-out 15s forwards,
+               white-pawn-eighth-move2 0.5s ease-in-out 67s forwards,
+               white-pawn-eighth-move3 0.3s ease-in-out 68s forwards;
+}
+/* WHITE-PAWN-EIGHTH */
+@keyframes white-pawn-eighth-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -150px; left: 50px;}
+  }
+@keyframes white-pawn-eighth-move2 {
+    0%   { top: -150px; left: 50px; }
+    100% { top: -250px; left: -50px;}
+  }  
+@keyframes white-pawn-eighth-move3 {
+    0%   { top: -250px; left: -50px; }
+    100% { top: -250px; left: -50px; display: none;}
+  }  
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-rook-first img {
+    animation: white-rook-first-move1 0.5s ease-in-out 29s forwards,
+               white-rook-first-move2 0.5s ease-in-out 43s forwards,
+               white-rook-first-move3 0.5s ease-in-out 45s forwards,
+               white-rook-first-move4 0.5s ease-in-out 55s forwards,
+               white-rook-first-move5 0.5s ease-in-out 61s forwards,
+               white-rook-first-move6 0.5s ease-in-out 71s forwards,
+               white-rook-first-move7 0.5s ease-in-out 73s forwards,
+               white-rook-first-move8 0.5s ease-in-out 75s forwards,
+               white-rook-first-move9 0.5s ease-in-out 91s forwards;
+}
+/* WHITE-ROOK-FIRST */
+@keyframes white-rook-first-move1 {
+    0%   { top: 50px; left: 50px; z-index: 3;}
+    100% { top: 50px; left: 350px; z-index: 3;}
+  }
+@keyframes white-rook-first-move2 {
+    0%   { top: 50px; left: 350px; z-index: 3;}
+    100% { top: -250px; left: 350px; z-index: 3;}
+  }
+@keyframes white-rook-first-move3 {
+    0%   { top: -250px; left: 350px; }
+    100% { top: -250px; left: 550px; }
+  }
+@keyframes white-rook-first-move4 {
+    0%   { top: -250px; left: 550px; }
+    100% { top: -350px; left: 550px; }
+  }
+@keyframes white-rook-first-move5 {
+    0%   { top: -350px; left: 550px; }
+    100% { top: -350px; left: 450px; }
+  }
+@keyframes white-rook-first-move6 {
+    0%   { top: -350px; left: 450px; }
+    100% { top: -450px; left: 450px; }
+  }
+@keyframes white-rook-first-move7 {
+    0%   { top: -450px; left: 450px; }
+    100% { top: -450px; left: 650px; }
+  }
+@keyframes white-rook-first-move8 {
+    0%   { top: -450px; left: 650px; }
+    100% { top: -250px; left: 650px; }
+  }
+@keyframes white-rook-first-move9 {
+    0%   { top: -250px; left: 650px; }
+    100% { top: -450px; left: 650px; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-rook-second img {
+    animation: white-rook-second-move1 0.5s ease-in-out 49s forwards,
+               white-rook-second-move2 0.5s ease-in-out 63s forwards,
+               white-rook-second-move3 0.5s ease-in-out 69s forwards,
+               white-rook-second-move4 0.5s ease-in-out 85s forwards,
+               white-rook-second-move5 0.5s ease-in-out 95s forwards;
+}
+/* WHITE-ROOK-FIRST */
+@keyframes white-rook-second-move1 {
+    0%   { top: 50px; left: 50px; z-index: 3;}
+    100% { top: 50px; left: -250px; z-index: 3;}
+  }
+@keyframes white-rook-second-move2 {
+    0%   { top: 50px; left: -250px; z-index: 3;}
+    100% { top: 50px;left: -350px; z-index: 3;}
+  }
+@keyframes white-rook-second-move3 {
+    0%   { top: 50px; left: -350px; }
+    100% { top: -50px; left: -350px; }
+  }
+@keyframes white-rook-second-move4 {
+    0%   { top: -50px; left: -350px; }
+    100% { top: -250px; left: -350px; }
+  }
+@keyframes white-rook-second-move5 {
+    0%   { top: -250px; left: -350px; }
+    100% { top: -250px; left: -450px; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-knight-first img {
+    animation: white-knight-first-move1 0.5s ease-in-out 9s forwards,
+               white-knight-first-move2 0.5s ease-in-out 57s forwards,
+               white-knight-first-move3 0.5s ease-in-out 99s forwards;
+}
+/* WHITE-KNIGHT-FIRST */
+@keyframes white-knight-first-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -150px; left: 150px; }
+  }
+
+@keyframes white-knight-first-move2 {
+    0%   { top: -150px; left: 150px; }
+    100% { top: -250px; left: 350px; }
+  }
+
+@keyframes white-knight-first-move3 {
+    0%   { top: -250px; left: 350px; }
+    100% { top: -350px; left: 150px; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-knight-second img {
+    animation: white-knight-second-move1 0.5s ease-in-out 17s forwards,
+               white-knight-second-move2 0.5s ease-in-out 19s forwards,
+               white-knight-second-move3 0.3s ease-in-out 22s forwards;
+}
+/* WHITE-KNIGHT-SECOND */
+@keyframes white-knight-second-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -150px; left: -50px; }
+  }
+
+@keyframes white-knight-second-move2 {
+    0%   { top: -150px; left: -50px; }
+    100% { top: -350px; left: -150px; }
+  }
+
+@keyframes white-knight-second-move3 {
+    0%   { top: -350px; left: -150px; }
+    100% { top: -350px; left: -150px; display: none; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-bishop-first img {
+    animation: white-bishop-first-move1 0.5s ease-in-out 11s forwards,
+               white-bishop-first-move2 0.5s ease-in-out 23s forwards,
+               white-bishop-first-move3 0.5s ease-in-out 25s forwards,
+               white-bishop-first-move4 0.3s ease-in-out 38s forwards;
+}
+/* WHITE-BISHOP-FIRST */
+@keyframes white-bishop-first-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -250px; left: 350px; }
+  }
+
+@keyframes white-bishop-first-move2 {
+    0%   { top: -250px; left: 350px; }
+    100% { top: -350px; left: 250px; }
+  }
+
+@keyframes white-bishop-first-move3 {
+    0%   { top: -350px; left: 250px; }
+    100% { top: -250px; left: 350px; }
+  }
+@keyframes white-bishop-first-move4 {
+    0%   { top: -250px; left: 350px; }
+    100% { top: -250px; left: 350px; display: none; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-bishop-second img {
+    animation: white-bishop-second-move1 0.5s ease-in-out 47s forwards,
+               white-bishop-second-move2 0.5s ease-in-out 51s forwards,
+               white-bishop-second-move3 0.5s ease-in-out 53s forwards,
+               white-bishop-second-move4 0.3s ease-in-out 54s forwards;
+}
+/* WHITE-BISHOP-SECOND */
+@keyframes white-bishop-second-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -150px; left: -150px; }
+  }
+
+@keyframes white-bishop-second-move2 {
+    0%   { top: -150px; left: -150px; }
+    100% { top: -250px; left: -50px; }
+  }
+
+@keyframes white-bishop-second-move3 {
+    0%   { top: -250px; left: -50px; }
+    100% { top: -350px; left: 50px; }
+  }
+@keyframes white-bishop-second-move4 {
+    0%   { top: -350px; left: 50px; }
+    100% { top: -350px; left: 50px; display: none; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-queen img {
+    animation: white-queen-move1 0.5s ease-in-out 21s forwards,
+               white-queen-move2 0.5s ease-in-out 27s forwards,
+               white-queen-move3 0.5s ease-in-out 37s forwards,
+               white-queen-move4 0.5s ease-in-out 41s forwards,
+               white-queen-move5 0.3s ease-in-out 44s forwards;
+}
+/* WHITE-QUEEN */
+@keyframes white-queen-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: -150px; left: 250px; }
+  }
+
+@keyframes white-queen-move2 {
+    0%   { top: -150px; left: 250px; }
+    100% { top: -150px; left: 350px; }
+  }
+@keyframes white-queen-move3 {
+    0%   { top: -150px; left: 350px; }
+    100% { top: -250px; left: 350px; }
+  }
+@keyframes white-queen-move4 {
+    0%   { top: -250px; left: 350px; }
+    100% { top: -250px; left: 250px;}
+  }
+@keyframes white-queen-move5 {
+    0%   { top: -250px; left: 250px; }
+    100% { top: -250px; left: 250px; display: none; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.white-king img {
+    animation: white-king-move1 0.5s ease-in-out 29s forwards,
+               white-king-move2 0.5s ease-in-out 77s forwards,
+               white-king-move3 0.5s ease-in-out 83s forwards,
+               white-king-move4 0.5s ease-in-out 87s forwards,
+               white-king-move5 0.5s ease-in-out 89s forwards,
+               white-king-move6 0.5s ease-in-out 93s forwards,
+               white-king-move7 0.5s ease-in-out 97s forwards;
+}
+/* WHITE-KING */
+@keyframes white-king-move1 {
+    0%   { top: 50px; left: 50px; }
+    100% { top: 50px; left: -150px; }
+  }
+@keyframes white-king-move2 {
+    0%   { top: 50px; left: -150px; }
+    100% { top: -50px; left: -150px; }
+  }
+@keyframes white-king-move3 {
+    0%   { top: -50px; left: -150px; }
+    100% { top: -150px; left: -250px; }
+  }
+@keyframes white-king-move4 {
+    0%   { top: -150px; left: -250px; }
+    100% { top: -50px; left: -150px;}
+  }
+@keyframes white-king-move5 {
+    0%   { top: -50px; left: -150px; }
+    100% { top: -150px; left: -50px;}
+  }
+@keyframes white-king-move6 {
+    0%   { top: -150px; left: -50px; }
+    100% { top: -50px; left: 50px;}
+  } 
+@keyframes white-king-move7 {
+    0%   { top: -50px; left: 50px; }
+    100% { top: -150px; left: 150px;} 
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-pawn-first img {
+    animation: black-pawn-first-move1 0.5s ease-in-out 12s forwards
+}
+/* BLACK-PAWN-FIRST */
+@keyframes black-pawn-first-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 150px; left: 50px; z-index: 2;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-pawn-second img {
+    animation: black-pawn-second-move1 0.5s ease-in-out 18s forwards,
+               black-pawn-second-move2 0.5s ease-in-out 74s forwards,
+               black-pawn-second-move3 0.5s ease-in-out 76s forwards,
+               black-pawn-second-move4 0.5s ease-in-out 78s forwards,
+               black-pawn-second-move5 0.3s ease-in-out 79s forwards;
+}
+/* BLACK-PAWN-SECOND */
+@keyframes black-pawn-second-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 150px; left: 50px; z-index: 2;}
+  }
+@keyframes black-pawn-second-move2 {
+    0%   { top: 150px; left: 50px; z-index: 2;}
+    100% { top: 250px; left: 50px; z-index: 2;}
+  }
+@keyframes black-pawn-second-move3 {
+    0%   { top: 250px; left: 50px; z-index: 2;}
+    100% { top: 350px; left: 50px; z-index: 2;}
+  }
+@keyframes black-pawn-second-move4 {
+    0%   { top: 350px; left: 50px; z-index: 2;}
+    100% { top: 450px; left: 150px; z-index: 2;}
+  }
+@keyframes black-pawn-second-move5 {
+    0%   { top: 450px; left: 150px; z-index: 2;}
+    100% { top: 450px; left: 150px; z-index: 2; display: none;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-pawn-third img {
+    animation: black-pawn-third-move1 0.5s ease-in-out 26s forwards,
+               black-pawn-third-move2 0.5s ease-in-out 32s forwards,
+               black-pawn-third-move3 0.3s ease-in-out 43s forwards;
+}
+/* BLACK-PAWN-THIRD */
+@keyframes black-pawn-third-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 250px; left: 50px; z-index: 2;}
+  }
+@keyframes black-pawn-third-move2 {
+    0%   { top: 250px; left: 50px; z-index: 2;}
+    100% { top: 350px; left: 150px; z-index: 2;}
+  }  
+@keyframes black-pawn-third-move3 {
+    0%   { top: 350px; left: 150px; z-index: 2;}
+    100% { top: 350px; left: 150px; display: none;}
+  }  
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-pawn-forth img {
+    animation: black-pawn-forth-move1 0.5s ease-in-out 8s forwards,
+               black-pawn-forth-move2 0.3s ease-in-out 33s forwards;
+}
+/* BLACK-PAWN-FORTH */
+@keyframes black-pawn-forth-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 250px; left: 50px; z-index: 2;}
+  }
+@keyframes black-pawn-forth-move2 {
+    0%   { top: 250px; left: 50px; z-index: 2;}
+    100% { top: 250px; left: 50px; display: none;}
+  }  
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-pawn-fifth img {
+    animation: black-pawn-fifth-move1 0.5s ease-in-out 16s forwards,
+               black-pawn-fifth-move2 0.3s ease-in-out 35s forwards;
+}
+/* BLACK-PAWN-FIFTH */
+@keyframes black-pawn-fifth-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 150px; left: 50px; z-index: 2;}
+  }
+@keyframes black-pawn-fifth-move2 {
+    0%   { top: 150px; left: 50px; z-index: 2;}
+    100% { top: 150px; left: 50px; display: none;}
+  }  
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-pawn-sixth img {
+    animation: black-pawn-sixth-move1 0.3s ease-in-out 39s forwards;
+}
+/* BLACK-PAWN-SIXTH */
+@keyframes black-pawn-sixth-move1 {
+    0%   { top: 50px; left: 50px;}
+    100% { top: 50px; left: 50px; display: none;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-pawn-seventh img {
+    animation: black-pawn-seventh-move1 0.5s ease-in-out 66s forwards,
+               black-pawn-seventh-move2 0.3s ease-in-out 67s forwards;
+}
+/* BLACK-PAWN-SEVENTH */
+@keyframes black-pawn-seventh-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 250px; left: 50px; z-index: 2;}
+  }
+  @keyframes black-pawn-seventh-move2 {
+    0%   { top: 250px; left: 50px; z-index: 2;}
+    100% { top: 250px; left: 50px; display: none;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-pawn-eighth img {
+    animation: black-pawn-eighth-move1 0.5s ease-in-out 14s forwards,
+               black-pawn-eighth-move2 0.5s ease-in-out 68s forwards,
+               black-pawn-eighth-move3 0.5s ease-in-out 70s forwards,
+               black-pawn-eighth-move4 0.5s ease-in-out 75s forwards;
+}
+/* BLACK-PAWN-EIGHTH */
+@keyframes black-pawn-eighth-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 150px; left: 50px; z-index: 2;}
+  }
+@keyframes black-pawn-eighth-move2 {
+    0%   { top: 150px; left: 50px; z-index: 2; }
+    100% { top: 250px; left: -50px; z-index: 2;}
+  }  
+@keyframes black-pawn-eighth-move3 {
+    0%   { top: 250px; left: -50px; z-index: 2;}
+    100% { top: 350px; left: -50px; z-index: 2;}
+  }  
+  @keyframes black-pawn-eighth-move4 {
+    0%   { top: 350px; left: -50px; z-index: 2;}
+    100% { top: 350px; left: -50px; display: none;}
+  } 
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-rook-first img {
+    animation: black-rook-first-move1 0.5s ease-in-out 30s forwards,
+               black-rook-first-move2 0.5s ease-in-out 48s forwards,
+               black-rook-first-move3 0.5s ease-in-out 86s forwards,
+               black-rook-first-move4 0.5s ease-in-out 96s forwards;
+}
+/* BLACK-ROOK-FIRST */
+@keyframes black-rook-first-move1 {
+    0%   { top: 50px; left: 50px; z-index: 3;}
+    100% { top: 50px; left: 250px; z-index: 3;}
+  }
+@keyframes black-rook-first-move2 {
+    0%   { top: 50px; left: 250px; z-index: 3;}
+    100% { top: 150px; left: 250px; z-index: 3;}
+  }
+@keyframes black-rook-first-move3 {
+    0%   {  top: 150px; left: 250px; z-index: 3;}
+    100% { top: 150px; left: 150px; z-index: 3;}
+  }
+@keyframes black-rook-first-move4 {
+    0%   { top: 150px; left: 150px; z-index: 3;}
+    100% { top: 150px; left: 450px; z-index: 3;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-rook-second img {
+    animation: black-rook-second-move1 0.5s ease-in-out 62s forwards,
+               black-rook-second-move2 0.5s ease-in-out 64s forwards,
+               black-rook-second-move3 0.5s ease-in-out 80s forwards,
+               black-rook-second-move4 0.5s ease-in-out 82s forwards,
+               black-rook-second-move5 0.5s ease-in-out 90s forwards,
+               black-rook-second-move6 0.5s ease-in-out 92s forwards,
+               black-rook-second-move7 0.5s ease-in-out 94s forwards;
+}
+/* BLACK-ROOK-FIRST */
+@keyframes black-rook-second-move1 {
+    0%   { top: 50px; left: 50px; z-index: 3;}
+    100% { top: 50px; left: -350px; z-index: 3;}
+  }
+@keyframes black-rook-second-move2 {
+    0%   { top: 50px; left: -350px; z-index: 3;}
+    100% { top: 50px; left: -150px; z-index: 3;}
+  }
+@keyframes black-rook-second-move3 {
+    0%   { top: 50px; left: -150px; z-index: 3;}
+    100% { top: 350px; left: -150px; z-index: 3;}
+  }
+@keyframes black-rook-second-move4 {
+    0%   { top: 350px; left: -150px; z-index: 3;}
+    100% { top: 350px; left: -650px; z-index: 3;}
+  }
+@keyframes black-rook-second-move5 {
+    0%   { top: 350px; left: -650px; z-index: 3;}
+    100% { top: 350px; left: 50px; z-index: 3;}
+  }
+@keyframes black-rook-second-move6 {
+    0%   { top: 350px; left: 50px; z-index: 3;}
+    100% { top: 750px; left: 50px; z-index: 3;}
+  }
+@keyframes black-rook-second-move7 {
+    0%   { top: 750px; left: 50px; z-index: 3;}
+    100% { top: 750px; left: -650px; z-index: 3;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-knight-first img {
+    animation: black-knight-first-move1 0.5s ease-in-out 24s forwards,
+               black-knight-first-move2 0.5s ease-in-out 34s forwards,
+               black-knight-first-move3 0.5s ease-in-out 36s forwards,
+               black-knight-first-move4 0.5s ease-in-out 38s forwards,
+               black-knight-first-move5 0.3s ease-in-out 41s forwards;
+}
+/* BLACK-KNIGHT-FIRST */
+@keyframes black-knight-first-move1 {
+    0%   { top: 50px; left: 50px; z-index: 3;}
+    100% { top: 150px; left: 250px; z-index: 3;}
+  }
+
+@keyframes black-knight-first-move2 {
+    0%   { top: 150px; left: 250px; z-index: 3;}
+    100% { top: 250px; left: 450px; z-index: 3;}
+  }
+
+@keyframes black-knight-first-move3 {
+    0%   { top: 250px; left: 450px; z-index: 3;}
+    100% { top: 350px; left: 650px; z-index: 3;}
+  }
+@keyframes black-knight-first-move4 {
+    0%   { top: 350px; left: 650px; z-index: 3;}
+    100% { top: 450px; left: 450px; z-index: 3;}
+  }
+@keyframes black-knight-first-move5 {
+    0%   { top: 450px; left: 450px; z-index: 3;}
+    100% { top: 450px; left: 450px; display: none;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-knight-second img {
+    animation: black-knight-second-move1 0.5s ease-in-out 10s forwards,
+               black-knight-second-move2 0.5s ease-in-out 20s forwards,
+               black-knight-second-move3 0.5s ease-in-out 22s forwards,
+               black-knight-second-move4 0.3s ease-in-out 23s forwards;
+}
+/* BLACK-KNIGHT-SECOND */
+@keyframes black-knight-second-move1 {
+    0%   { top: 50px; left: 50px; z-index: 3;}
+    100% { top: 250px; left: -50px; z-index: 3;}
+  }
+
+@keyframes black-knight-second-move2 {
+    0%   { top: 250px; left: -50px; z-index: 3;}
+    100% { top: 150px; left: -250px; z-index: 3;}
+  }
+
+@keyframes black-knight-second-move3 {
+    0%   { top: 150px; left: -250px; z-index: 3;}
+    100% { top: 350px; left: -150px; z-index: 3;}
+  }
+@keyframes black-knight-second-move4 {
+    0%   { top: 350px; left: -150px; z-index: 3;}
+    100% { top: 350px;left: -150px; display: none; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-bishop-first img {
+    animation: black-bishop-first-move1 0.5s ease-in-out 28s forwards,
+               black-bishop-first-move2 0.5s ease-in-out 52s forwards,
+               black-bishop-first-move3 0.5s ease-in-out 54s forwards,
+               black-bishop-first-move4 0.3s ease-in-out 55s forwards;
+}
+/* BLACK-BISHOP-FIRST */
+@keyframes black-bishop-first-move1 {
+    0%   { top: 50px; left: 50px; z-index: 3;}
+    100% { top: 150px; left: -50px; z-index: 3;}
+  }
+
+@keyframes black-bishop-first-move2 {
+    0%   { top: 150px; left: -50px; z-index: 3;}
+    100% { top: 50px; left: 50px; z-index: 3;}
+  }
+
+@keyframes black-bishop-first-move3 {
+    0%   { top: 50px; left: 50px; z-index: 3;}
+    100% { top: 350px; left: 350px; z-index: 3;}
+  }
+@keyframes black-bishop-first-move4 {
+    0%   { top: 350px; left: 350px; z-index: 3;}
+    100% { top: 350px;left: 350px; display: none; }
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-bishop-second img {
+    animation: black-bishop-second-move1 0.5s ease-in-out 56s forwards,
+               black-bishop-second-move2 0.5s ease-in-out 58s forwards,
+               black-bishop-second-move3 0.5s ease-in-out 88s forwards,
+               black-bishop-second-move4 0.5s ease-in-out 98s forwards;
+}
+/* BLACK-BISHOP-SECOND */
+@keyframes black-bishop-second-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 350px; left: -250px; z-index: 2;}
+  }
+
+@keyframes black-bishop-second-move2 {
+    0%   { top: 350px; left: -250px; z-index: 2;}
+    100% { top: 150px; left: -50px; z-index: 2;}
+  }
+
+@keyframes black-bishop-second-move3 {
+    0%   { top: 150px; left: -50px; z-index: 2;}
+    100% { top: 550px; left: -450px; z-index: 2;}
+  }
+@keyframes black-bishop-second-move4 {
+    0%   { top: 550px; left: -450px; z-index: 2;}
+    100% { top: 650px; left: -350px; z-index: 2;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-queen img {
+    animation: black-queen-move1 0.5s ease-in-out 42s forwards,
+               black-queen-move2 0.5s ease-in-out 44s forwards,
+               black-queen-move3 0.3s ease-in-out 45s forwards;
+} 
+/* BLACK-QUEEN */
+@keyframes black-queen-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 250px; left: 250px; z-index: 2;}
+  }
+
+@keyframes black-queen-move2 {
+    0%   { top: 250px; left: 250px; z-index: 2;}
+    100% { top: 450px; left: 250px; z-index: 2;}
+  }
+@keyframes black-queen-move3 {
+    0%   { top: 450px; left: 250px; z-index: 2;}
+    100% { top: 450px; left: 250px; display: none;}
+  }
+/* -------------------------------------------------- */
+
+
+/* -------------------------------------------------- */
+.black-king img {
+    animation: black-king-move1 0.5s ease-in-out 40s forwards,
+               black-king-move2 0.5s ease-in-out 46s forwards,
+               black-king-move3 0.5s ease-in-out 50s forwards,
+               black-king-move4 0.5s ease-in-out 60s forwards,
+               black-king-move5 0.5s ease-in-out 72s forwards,
+               black-king-move6 0.5s ease-in-out 84s forwards;
+}
+/* BLACK-KING */
+@keyframes black-king-move1 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 150px; left: 150px; z-index: 2;}
+  }
+@keyframes black-king-move2 {
+    0%   { top: 150px; left: 150px; z-index: 2;}
+    100% { top: 50px;left: 50px; z-index: 2;}
+  }
+@keyframes black-king-move3 {
+    0%   { top: 50px; left: 50px; z-index: 2;}
+    100% { top: 50px; left: -50px; z-index: 2;}
+  }
+@keyframes black-king-move4 {
+    0%   { top: 50px; left: -50px; z-index: 2;}
+    100% { top: 50px; left: -150px; z-index: 2;}
+  }
+@keyframes black-king-move5 {
+    0%   { top: 50px; left: -150px; z-index: 2;}
+    100% { top: 150px; left: -250px; z-index: 2;}
+  }
+@keyframes black-king-move6 {
+    0%   { top: 150px; left: -250px; z-index: 2;}
+    100% { top: 150px;left: -350px; z-index: 2;}
+  } 
+
+
+/* -------------------------------------------------- */
+
+
+.footer {
+    background-color: #4a4a4a;
+    padding: 20px 0;
+}
+.footer__title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
