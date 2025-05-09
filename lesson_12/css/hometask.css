@@ -121,7 +121,7 @@ body {
     animation-fill-mode: forwards;
     animation-delay: 100s;
     position: absolute;
-    top: 46%;
+    top: 600px;
     left: 48%;
     font-size: 100px;
     font-family: "Exo 2", sans-serif;
