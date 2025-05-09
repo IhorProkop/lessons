@@ -1,0 +1,278 @@
+@import url("reset.css");
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+}
+
+[class*="__container"] {
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.page {
+    flex-grow: 1;
+}
+
+
+/* _______________________________________________________________________________________________________________________________________________ */
+
+.header {
+    padding: 20px 0;
+}
+
+.header__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.header__list {
+    display: flex;
+    gap: 40px;
+}
+
+.header__link {
+    font-size: 20px;
+    position: relative;
+}
+
+.header__link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0px;
+    height: 1.2px;
+    background-color: red;
+    will-change: width;
+    transition: width 0.2s ease-in-out;
+}
+
+.header__link:hover::after{
+    width: 100%;
+}
+
+
+/* _______________________________________________________________________________________________________________________________________________ */
+
+
+.faculty-tutors {
+    background-color: #412672;
+    color: white;
+    padding: 61px 0px 102px;
+}
+
+.faculty-tutors__title {
+    font-size: 38px;
+    line-height: 1.21;
+    margin-bottom: 31px;
+    display: flex;
+    flex-direction: column;
+}
+.faculty-tutors__title-sub {
+    font-weight: 300;
+}
+.faculty-tutors__title-main {
+    font-weight: 700;
+}
+
+.faculty-tutors__cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.faculty-tutors__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    flex-basis: 386px;
+    padding: 20px;
+    background-color: #FFF;
+    box-shadow: 0px 384px 108px 0px rgba(0, 0, 0, 0.00),
+                0px 246px 98px 0px rgba(0, 0, 0, 0.01),
+                0px 138px 83px 0px rgba(0, 0, 0, 0.05),
+                0px 62px 62px 0px rgba(0, 0, 0, 0.09),
+                0px 15px 34px 0px rgba(0, 0, 0, 0.10);
+    will-change: background-color;
+    transition: background-color 0.3s ease-in-out;
+}
+.faculty-tutors__card:hover {
+    background-color: #FFBE48;
+}
+.faculty-tutors__img {
+    max-width: 347px;
+}
+.faculty-tutors__card-title {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.22;
+    color: #000;
+}
+.faculty-tutors__text {
+    font-size: 15px;
+    color: #4F4F4F;
+    line-height: 1.26;
+    flex-grow: 1;
+}
+.faculty-tutors__link {
+    font-size: 15px;
+    line-height: 1.26;
+    color: #FE3F3F;
+    position: relative;
+    width: fit-content;
+}
+.faculty-tutors__link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.2px;
+    background-color: #FE3F3F;
+    will-change: width;
+    transition: width 0.3s ease-in-out;
+}
+.faculty-tutors__link:hover::after {
+    width: 100%;
+}
+
+
+/* _______________________________________________________________________________________________________________________________________________ */
+
+
+.faculty-benefits {
+    padding: 55px 0 72px;
+    background-color: #fff;
+    color: black;
+}
+.faculty-benefits__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+}
+.faculty-benefits__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    flex-basis: 518px;
+}
+.faculty-benefits__title {
+    font-size: 34px;
+    line-height: 1.2;
+}
+.faculty-benefits__sub {
+    color: #412672;
+    font-weight: 300;
+}
+.faculty-benefits__main {
+    color: #412672;
+    font-weight: 700;
+}
+.faculty-benefits__text {
+    font-size: 22px;
+    color: #412672;
+    line-height: 1.22;
+}
+.faculty-benefits__item {
+    color: #4F4F4F;
+    line-height: 1.5;
+    font-size: 20px;
+    display: inline-flex;
+    gap: 15px;
+}
+.faculty-benefits__item:not(:last-child) {
+    margin-bottom: 21px;
+}
+.faculty-benefits__item::before {
+    content: "";
+    align-self: flex-start;
+    background: url("../img/checkmark.svg") 0 0 / 100% no-repeat;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 29px;
+    height: 29px;
+}
+.faculty-benefits__img {
+    margin-right: -140px;
+    max-width: 764px;
+    flex-grow: 1;
+}
+
+
+/* _______________________________________________________________________________________________________________________________________________ */
+
+
+.faculty-facts {
+    padding: 70px 0;
+    background-color: #412672;
+    color: white;
+}
+.faculty-facts__body > *:not(:last-child) {
+    margin-bottom: 30px;
+}
+.faculty-facts__title {
+    font-size: 24px;
+    line-height: 1.24;
+    text-align: center;
+}
+.faculty-facts__sub {
+    font-weight: 300;
+}
+.faculty-facts__main {
+    font-weight: 700;
+}
+.faculty-facts__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.faculty-facts__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.faculty-facts__img {
+    width: 70px;
+    height: 70px;
+}
+.faculty-facts__item-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+.faculty-facts__label {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* _______________________________________________________________________________________________________________________________________________ */
+
+
+.footer {
+    background-color: white;
+    padding: 20px 0;
+}
+.footer__title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
