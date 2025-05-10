@@ -121,6 +121,14 @@ body {
 }
 .faculty-tutors__img {
     max-width: 347px;
+    overflow: hidden;
+}
+.faculty-tutors__img img {
+    will-change: transform;
+    transition: transform 0.3s ease-in-out;
+}
+.faculty-tutors__img img:hover {
+    transform: scale(1.1);
 }
 .faculty-tutors__card-title {
     font-size: 22px;
