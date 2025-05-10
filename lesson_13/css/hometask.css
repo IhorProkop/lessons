@@ -36,6 +36,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 10px;
 }
 .header__title {
     font-size: 40px;
@@ -44,7 +46,9 @@ body {
 
 .header__list {
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 10px;
 }
 
 .header__link {
