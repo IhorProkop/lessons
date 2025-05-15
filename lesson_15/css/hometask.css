@@ -1,0 +1,202 @@
+@import url("reset.css");
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+}
+
+[class*="__container"] {
+    max-width: 1350px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.page {
+    flex-grow: 1;
+}
+
+
+/* ____________________________________________________________________________________________________________________________________________________ */
+
+
+.featured-products {
+    padding: 60px 0;
+}
+.featured-products__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    column-gap: 50px;
+    margin-bottom:  32px;
+}
+.title {
+    font-size: 32px;
+    color: #1A1A1A;
+    font-weight: 600;
+    line-height: 1.2; 
+}
+.featured-products__link {
+    font-weight: 500;
+    line-height: 1.5;
+    color: #00B207;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.featured-products__link::before {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: #00B207;
+    transition: width 0.2s ease-in-out;
+}
+.featured-products__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.featured-item {
+    flex: 0 1 264px;
+    border: 1px solid #E6E6E6;
+    position: relative;
+    padding: 12px;
+    transition: border 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out;
+    display: block;
+}
+.featured-item__shopping-bag-icon svg path {
+    transition: stroke 0.3s ease-in-out;
+}
+.featured-item__discount-label {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    background-color: #EA4B48;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    line-height: 1.5;
+    z-index: 5;
+}
+.featured-item__img {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 12px;
+    aspect-ratio: 254/230;
+}
+.featured-item__img img {
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+    object-position: center;
+}
+.featured-item__title {
+    font-size: 14px;
+    line-height: 1.5;
+    transition: color 0.3s ease-in-out;
+}
+.item-price {
+    display: flex;
+    gap: 2px;
+}
+.item-price__number {
+    line-height: 1.5;
+}
+.item-price__number--current {
+    font-weight: 500;
+    color: #1A1A1A;
+}
+.item-price__number--old {
+    color: #999;
+    text-decoration: line-through;
+}
+.featured-item__shopping-bag-icon {
+    position: absolute;
+    bottom: 23.5px;
+    right: 16px;  
+    background-color: #F2F2F2;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 5;
+}
+.featured-item__ranking-stars {
+    display: flex;
+}
+.featured-item__icons {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 5;
+}
+.featured-item__heart-icon,
+.featured-item__eye-icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #F2F2F2;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out,
+                border-color 0.3s ease-in-out;
+}
+.featured-item__heart-icon svg path,
+.featured-item__eye-icon svg path {
+    transition: stroke 0.3s ease-in-out;
+}
+
+@media (any-hover: hover) {
+    .featured-item:hover .featured-item__title {
+        color: #2C742F;
+    }
+    .featured-item:hover .featured-item__shopping-bag-icon svg path {
+        stroke: white;
+    }
+    .featured-products__link:hover::before {
+        width: 100%;
+    }
+    .featured-item:hover {
+        border: 1px solid #2C742F;
+        box-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
+    }
+    .featured-item__img img:hover {
+        transform: scale(1.1);
+    }
+    .featured-item:hover .featured-item__shopping-bag-icon {
+        background-color: #00B207;
+    }
+    .featured-item__heart-icon:hover svg path,
+    .featured-item__eye-icon:hover svg path {
+        stroke: white;
+    }
+    .featured-item__heart-icon:hover,
+    .featured-item__eye-icon:hover {
+        background-color: #00B207;
+        border-color: #00B207;
+    }
+}
+
+
+/* ____________________________________________________________________________________________________________________________________________________ */
+
+
