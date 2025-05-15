@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson14 - Hometask</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/hometask.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header"><!--Header--></header>
+
+        <main class="page">
+            <div class="ordering">
+                <div class="ordering__container">
+                    <div class="ordering__body">
+                        <form method="post" action="#" class="ordering__form form">
+                            <div class="form__main">
+                                <div class="form__billing billing">
+                                    <div class="billing__top">
+                                        <h2 class="billing__title title">
+                                            Billing Information
+                                        </h2>
+
+                                        <div class="billing__user">
+                                            <div class="billing__first-name">
+                                                <label for="username">First name</label>
+                                                <input type="text" placeholder="Your first name" autocomplete="on" id="username" name="form[]">
+                                            </div>
+                                            
+                                            <div class="billing__last-name">
+                                                <label for="last-name">Last name</label>
+                                                <input type="text" placeholder="Your last name" autocomplete="on" id="last-name" name="form[]">
+                                            </div>
+
+                                            <div class="billing__company-name">
+                                                <label for="company-name">Company Name <span>(optional)</span></label>
+                                                <input type="text" placeholder="Company name" autocomplete="on" id="company-name" name="form[]">
+                                            </div>
+                                        </div>
+
+                                        <div class="billing__address">
+                                            <label for="address">Street Address</label>
+                                            <input type="text" placeholder="Street address" autocomplete="on" id="address" name="form[]">
+                                        </div>
+
+                                        <div class="billing__location">
+                                            <div class="billing__country">
+                                                <label for="country">Country / Region</label>
+                                                <select class="billing__location-select form-select" name="form[]" id="country">
+                                                    <option value="">Option</option>
+                                                    <option value="usa">USA</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="billing__states">
+                                                <label for="states">States</label>
+                                                <select class="billing__location-select form-select" name="form[]" id="states">
+                                                    <option value="">Selects</option>
+                                                    <option value="tennessee">Tennessee</option>
+                                                    <option value="nevada">Nevada</option>
+                                                    <option value="ohio">Ohio</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="billing__zipcode">
+                                                <label for="zipcode">Zip Code</label>
+                                                <input type="number" placeholder="Zip Code" autocomplete="on" id="zipcode" name="form[]">
+                                            </div>
+                                        </div>
+
+                                        <div class="billing__contacts">
+                                            <div class="billing__email">
+                                                <label for="email">Email</label>
+                                                <input type="email" placeholder="Email Address" autocomplete="on" id="email" name="form[]">
+                                            </div>
+                                            <div class="billing__phone">
+                                                <label for="phone">Phone</label>
+                                                <input type="tel" placeholder="Phone number" autocomplete="on" id="phone" name="form[]">
+                                            </div>
+                                        </div>
+
+                                        <div class="billing__checkbox custom-checkbox">
+                                            <label class="custom-checkbox-label">
+                                                <input class="checkbox" type="checkbox" name="form[]">
+                                                <span tabindex="0" class="custom-checkbox__text">Ship to a different address</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="billing__bottom">
+                                    <div class="form__additional-info additional-info">
+                                        <h2 class="additional-info__title title">
+                                            Additional Info
+                                        </h2>
+
+                                        <div class="additional-info__notes">
+                                            <label for="notes">Order Notes (Optional)</label>
+                                            <textarea class="additional-info__text-area" placeholder="Notes about your order, e.g. special notes for delivery" id="notes" name="form[]"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form__sidebar">
+                                <div class="form__order-summary order-summary">
+                                    <h3 class="order-summary__title title">
+                                        Order Summary
+                                    </h3>
+                                    <div class="order-summary__items">
+                                        <div class="order-summary__item-top">
+                                            <div class="order-summary__item-goods">
+                                                <a href="#" class="order-summary__item-good-link">
+                                                    <div class="order-summary__item item">
+                                                        <div class="item__description">
+                                                            <picture class="item__img">
+                                                                <source srcset="img/order-item-first.avif 1x, img/order-item-first-2x.avif 2x, img/order-item-first-3x.avif 3x" type="image/avif">
+                                                                <img src="img/order-item-first.avif" alt="green pepper">
+                                                            </picture>
+                                                            <div class="item__name name">
+                                                                <p>Green Capsicum x5</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="item__price price">
+                                                            <p>$70.00</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="order-summary__item-good-link">
+                                                    <div class="order-summary__item item">
+                                                        <div class="item__description">
+                                                            <picture class="item__img">
+                                                                <source srcset="img/order-item-second.avif 1x, img/order-item-second-2x.avif 2x, img/order-item-second-3x.avif 3x" type="image/avif">
+                                                                <img src="img/order-item-second.avif" alt="green pepper">
+                                                            </picture>
+                                                            <div class="item__name name">
+                                                                <p>Red Capsicum x1</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item__price price">
+                                                            <p>$14.00</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="order-summary__pricing-totals">
+                                                <div class="order-summary__subtotal">
+                                                    <p>Subtotal:</p>
+                                                    <p class="price">$84.00</p>
+                                                </div>
+
+                                                <div class="order-summary__shipping">
+                                                    <p>Shipping:</p>
+                                                    <p class="price">Free</p>
+                                                </div>
+                                                
+                                                <div class="order-summary__total">
+                                                    <p>Total:</p>
+                                                    <p class="price-bold">$84.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="order-summary__item-bottom">
+                                            <div class="order-summary__payment-method">
+                                                <p class="order-summary-title title">
+                                                    Payment Method:
+                                                </p>
+                                                <div class="order-summary__payment-choice">
+                                                    <div class="order-summary__payment-method-cash">
+                                                         <label class="order-summary__payment-option">
+                                                            <input checked class="form__radio-button" type="radio" name="form[]">
+                                                            <span tabindex="0" class="form__radio-button-label">Cash on Delivery</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="order-summary__payment-method-paypal">
+                                                        <label class="order-summary__payment-option">
+                                                            <input class="form__radio-button" type="radio" name="form[]">
+                                                            <span tabindex="0" class="form__radio-button-label">Paypal</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="order-summary__payment-method-amazon-pay">
+                                                        <label class="order-summary__payment-option">
+                                                            <input class="form__radio-button" type="radio" name="form[]">
+                                                            <span tabindex="0" class="form__radio-button-label">Amazon Pay</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <button class="order-summary__button" type="submit">
+                                                    Place Order
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+         <footer class="footer"><!--Footer--></footer> 
+    </div>
+</body>
+</html>
