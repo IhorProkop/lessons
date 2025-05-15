@@ -30,6 +30,9 @@ body {
 .ordering__form label {
     font-size: 14px;
 }
+.ordering__form select {
+    background-color: white;
+}
 .ordering__form input[type="text"], 
                 input[type="number"],
                 input[type="email"],
@@ -364,6 +367,10 @@ body {
 
 .order-summary__button:hover {
     background-color: #2C742F;
+}
+
+.order-summary__button:focus {
+    outline: 1.5px solid black;
 }
 
 /* _______________________________________________________________________________________________________________________________________________________ */
