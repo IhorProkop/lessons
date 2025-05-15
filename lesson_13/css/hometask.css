@@ -64,7 +64,6 @@ body {
     width: 0px;
     height: 1.2px;
     background-color: red;
-    will-change: width;
     transition: width 0.2s ease-in-out;
 }
 
@@ -88,11 +87,10 @@ body {
     margin-bottom: 31px;
     display: flex;
     flex-direction: column;
-}
-.faculty-tutors__title-sub {
     font-weight: 300;
 }
-.faculty-tutors__title-main {
+
+.faculty-tutors__title strong {
     font-weight: 700;
 }
 
@@ -113,7 +111,6 @@ body {
                 0px 138px 83px 0px rgba(0, 0, 0, 0.05),
                 0px 62px 62px 0px rgba(0, 0, 0, 0.09),
                 0px 15px 34px 0px rgba(0, 0, 0, 0.10);
-    will-change: background-color;
     transition: background-color 0.3s ease-in-out;
 }
 .faculty-tutors__card:hover {
@@ -157,7 +154,6 @@ body {
     width: 0;
     height: 1.2px;
     background-color: #FE3F3F;
-    will-change: width;
     transition: width 0.3s ease-in-out;
 }
 .faculty-tutors__link:hover::after {
@@ -188,13 +184,10 @@ body {
 .faculty-benefits__title {
     font-size: 34px;
     line-height: 1.2;
-}
-.faculty-benefits__sub {
     color: #412672;
     font-weight: 300;
 }
-.faculty-benefits__main {
-    color: #412672;
+.faculty-benefits__title strong {
     font-weight: 700;
 }
 .faculty-benefits__text {
@@ -243,18 +236,17 @@ body {
     font-size: 24px;
     line-height: 1.24;
     text-align: center;
-}
-.faculty-facts__sub {
     font-weight: 300;
 }
-.faculty-facts__main {
+.faculty-facts__title strong {
     font-weight: 700;
 }
+
 .faculty-facts__items {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    row-gap: 20px;
+    gap: 30px;
 }
 .faculty-facts__item {
     display: flex;
