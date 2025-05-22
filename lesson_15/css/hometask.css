@@ -72,13 +72,14 @@ body {
     justify-content: center;
 }
 .featured-item {
-    flex: 0 1 264px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 264px;
     border: 1px solid #E6E6E6;
     position: relative;
     padding: 12px;
     transition: border 0.3s ease-in-out,
                 box-shadow 0.3s ease-in-out;
-    display: block;
 }
 .featured-item__shopping-bag-icon svg path {
     transition: stroke 0.3s ease-in-out;
@@ -101,14 +102,26 @@ body {
     aspect-ratio: 254/230;
 }
 .featured-item__img img {
+    width: 100%;
     transition: transform 0.3s ease-in-out;
     object-fit: cover;
     object-position: center;
+}
+.featured-item__info {
+    display: flex;
+    flex-direction: column;
 }
 .featured-item__title {
     font-size: 14px;
     line-height: 1.5;
     transition: color 0.3s ease-in-out;
+    flex-grow: 1;
+}
+.featured-item__content {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 20px;
 }
 .item-price {
     display: flex;
@@ -125,17 +138,13 @@ body {
     color: #999;
     text-decoration: line-through;
 }
-.featured-item__shopping-bag-icon {
-    position: absolute;
-    bottom: 23.5px;
-    right: 16px;  
+.featured-item__shopping-bag-icon {  
     background-color: #F2F2F2;
     width: 40px;
     height: 40px;
     padding: 10px;
     border-radius: 50%;
     transition: background-color 0.3s ease-in-out;
-    z-index: 5;
 }
 .featured-item__ranking-stars {
     display: flex;
@@ -148,6 +157,8 @@ body {
     flex-direction: column;
     gap: 6px;
     z-index: 5;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
 .featured-item__heart-icon,
 .featured-item__eye-icon {
@@ -194,8 +205,30 @@ body {
         background-color: #00B207;
         border-color: #00B207;
     }
+    .featured-item:hover .featured-item__icons {
+        opacity: 1;
+    }
 }
-
+@media (pointer: coarse) {
+    .featured-item__icons {
+        opacity: 1;
+    }
+}
+@media (max-width: 1350px) {
+    .featured-item {
+        flex-basis: 25%;
+    }
+}
+@media (max-width: 900px) {
+    .featured-item {
+        flex-basis: 33.333%;
+    }
+}
+@media (max-width: 688px) {
+    .featured-item {
+        flex-basis: 33.333%;
+    }
+}
 @media (max-width: 1199.98px) {
     .featured-products__link {
         font-size: 23px;
@@ -224,45 +257,59 @@ body {
         padding: 14px;
     }
 }
-
+@media (max-width: 1365px) {
+    .featured-item {
+            flex-basis: 33.333%;
+        }
+}
+@media (max-width: 1092px) {
+    .featured-item {
+        flex-basis: 50%;
+    }
+}
+@media (max-width: 688px) {
+    .featured-item {
+        flex-basis: 100%;
+    }
+}
 @media (max-width: 574px) {
     .featured-item {
         flex-basis: 100%;
     }
     .featured-products__link {
-        font-size: 27px;
+        font-size: 23px;
     }
     .title {
-        font-size: 40px;
+        font-size: 32px;
     }
     .featured-item__title {
-        font-size: 25px;
+        font-size: 20px;
     }
     .item-price {
-        font-size: 24px;
+        font-size: 22px;
     }
     .featured-item__discount-label {
         font-size: 25px;
     }
     .featured-item__shopping-bag-icon {
-        width: 80px;
-        height: 80px;
-        padding: 20px;
+        width: 60px;
+        height: 60px;
+        padding: 15px;
     }
     .featured-item__shopping-bag-icon svg {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
     }
     .featured-item__heart-icon,
     .featured-item__eye-icon {
-        width: 80px;
-        height: 80px;
-        padding: 20px;
+        width: 60px;
+            height: 60px;
+            padding: 15px;
     }
     .featured-item__heart-icon svg,
     .featured-item__eye-icon svg {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
     }
     .featured-item__ranking-star svg {
         width: 25px;
@@ -295,17 +342,20 @@ body {
     display: flex;
     flex-direction: column;
 }
-.item-latest-news__img {
-    max-width: 424px;
-    display: block;
+.item-latest-news__img-decor-block {
     position: relative;
+}
+.item-latest-news__img {
+    background-color: #3d834a;
+    display: block;
     overflow: hidden;
     border-radius: 8px 8px 0 0;
     aspect-ratio: 424 / 324;
 }
 
 .item-latest-news__img img {
-    object-fit: cover;
+    object-fit: contain;
+    width: 100%;
     object-position: center;
     will-change: transform;
     transition: transform 0.3s ease-in-out;
@@ -367,7 +417,8 @@ body {
     flex-grow: 1;
 }
 .item-latest-news__link {
-    display: inline-flex;
+    display: flex;
+    align-self: flex-start;
     gap: 12px;
     align-items: center;
     color: #00B207;
@@ -377,7 +428,19 @@ body {
     transition: transform 0.2s ease-in-out;
     transform-origin: 0% 0%;
 }
-
+@media (max-width: 1365px) {
+    .item-latest-news {
+        flex-basis: 49%;
+    }
+    .item-latest-news__img {
+        max-width: 1000px;
+    }
+}
+@media (max-width: 1250px) {
+    .item-latest-news {
+        flex-basis: 100%;
+    }
+}
 @media (max-width: 1199.98px) {
     .item-latest-news__link {
         font-size: 20px;
