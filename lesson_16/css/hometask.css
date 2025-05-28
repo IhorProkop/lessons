@@ -239,8 +239,7 @@ body {
         gap: 20px;
     }
 }
-
-@media (any-hover: hover) and (pointer: coarse) {
+@media (any-hover: hover) {
     .menu__link:hover::before {
         width: 100%;
     }
