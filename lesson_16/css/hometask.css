@@ -240,7 +240,7 @@ body {
     }
 }
 
-@media (any-hover: hover) {
+@media (hover: none) and (pointer: coarse) {
     .menu__link:hover::before {
         width: 100%;
     }
