@@ -1,8 +1,8 @@
 @import url("reset.css");
+@import url("fonts.css");
 
-body {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
+html {
+    scroll-behavior: smooth;
 }
 
 [class*="__container"] {
@@ -24,14 +24,12 @@ body {
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
-.header {}
-
-
-/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-
 .wrapper > main {
     flex-grow: 1;
+}
+.featured-products {
+    font-family: "Poppins", sans-serif;
+     font-size: 14px;
 }
 .featured-products__body {
     display: grid;
@@ -87,7 +85,7 @@ body {
 .featured-top-banner__discount {
     color: #00B207;
 }
-.btn {
+.featured-btn {
     font-weight: 600;
     line-height: 1.2;
     color: #00B207;
@@ -119,14 +117,14 @@ body {
 }
 
 @media (any-hover: hover) {
-    .btn:hover {
+    .featured-btn:hover {
         background-color: #00B207;
         color: #fff;   
     }
-    .btn:hover svg path {
+    .featured-btn:hover svg path {
         stroke: white;
     }
-    .btn:hover svg {
+    .featured-btn:hover svg {
         transform: translateX(4px);           
     }
 }
@@ -195,14 +193,23 @@ body {
     line-height: 1.5;
     color: #4D4D4D;
 }
-.goods-price {
+.goods-card__rating-stars {
+    display: flex;
+}
+.price-block {
+    display: flex;
+    gap: 2px;
+}
+.price-block__price-tag {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
+}
+.price-block__price-tag--current {
     color: #1A1A1A;
 }
-.goods-card__rating-stars {
-    display: flex;
+.price-block__price-tag--old {
+    color: #999;
 }
 
 @media (any-hover: hover) {
@@ -232,6 +239,12 @@ body {
     }
     .goods-card:hover .goods-card__title {
         color: #2C742F;                                                                   
+    }
+}
+@media (pointer: coarse) {
+    .goods-card__icons {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -326,6 +339,20 @@ body {
                     visibility 0.3s ease-in-out;   
     }
 }
+@media (pointer: coarse) {
+    .goods-item__icons {
+        opacity: 1;
+        visibility: visible;
+        height: 100%;
+        width: 100%;
+    }
+    .goods-item__rating-stars {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+}
 
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -359,4 +386,178 @@ body {
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
-.footer {}
+.floral {
+    font-family: "KoPub Batang", serif;
+    background-color: #F8F3EC;
+}
+.floral__container {
+    max-width: 1230px;
+}
+.floral__body {
+    display: grid;
+    grid-template-columns: clamp(280px, 33%, 400px) 1fr;
+    align-items: start;
+    gap: 31px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+@media (max-width: 1038px) {
+    .floral__body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "right"
+            "left";
+    }
+    .floral__right {
+        grid-area: right;
+        padding-top: 0;
+    }
+    /* ПРИ ТАКІЙ ШИРИНІ Я ХОЧУ ЩОБ БУЛИ 2 КАРТОЧКИ В РЯД ,
+    В МЕНЕ ТАК НЕ ВИХОДИТЬ ЗРОБИТИ, ПРОШУ ПОЯСНИТИ  */
+    .floral__left {
+        grid-area: left;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 550px) {
+    /* ПРИ ТАКІЙ ШИРИНІ Я ХОЧУ ЩОБ БУЛА ОДНА КАРТОЧКА В РЯД,
+    В МЕНЕ ТАК НЕ ВИХОДИТЬ ЗРОБИТИ, ПРОШУ ПОЯСНИТИ  */
+    .floral__right {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.floral-title {
+    grid-column: span 2;
+    margin-bottom: 78px;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1.1;
+}
+.floral__left {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 16px;
+}
+.floral__right {
+    padding-top: 52px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 37px;
+    column-gap: 29px;
+}
+.card-floral {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.card-floral__img-link {
+    overflow: hidden;
+}
+.card-floral__img {
+    width: 100%;
+}
+.card-floral__img img {
+    will-change: transform;
+    width: 100%;
+    aspect-ratio: 401/427;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+.card-floral__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.card-floral__description {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.card-floral__title {
+    font-size: 20px;
+    color: #2C2C2C;
+    position: relative;
+}
+.card-floral__title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #2C2C2C;
+    height: 1px;
+    width: 0;
+    transition: width 0.25s ease-in-out;
+}
+.card-floral__price {
+    font-family: "Carme", sans-serif;
+    color: #4E4E4E;
+    font-size: 18px;
+}
+.card-floral__icons {
+    display: flex;
+    gap: 20px;
+}
+.card-floral__heart-icon,
+.card-floral__cart-icon {
+    transition: background-color 0.3s ease-in-out;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 3px;
+}
+.floral-btn {
+    position: relative;
+    font-size: 17px;
+    line-height: 1.37;
+    color: #2C2C2C;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 41px;
+    padding: 9px 30px;
+    background-color: #DBCCBA;
+    z-index: 1;
+    cursor: pointer;
+    width: fit-content;
+    margin-top: 40px;
+}
+.floral-btn::before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    bottom: -9px;
+    left: -9px;
+    right: -9px;
+    background-color: transparent;
+    border: 1px solid #DBCCBA;
+    z-index: -1;
+    transition: background-color 0.5s ease;
+}
+.floral-btn img {
+    width: 23px;
+    height: 14px;
+    flex-shrink: 0;
+}
+@media (any-hover: hover) and (pointer: fine) {
+    .card-floral__img-link:hover .card-floral__img img {
+        transform: scale(1.05);   
+    }
+    .card-floral__heart-icon:hover {
+        background-color: #dac5ac;
+    }
+    .card-floral__cart-icon:hover {
+        background-color: #dac5ac;   
+    }
+    .card-floral__title:hover::before {
+        width: 100%;   
+    }
+    .floral-btn:hover::before {
+        background-color: #DBCCBA;   
+    }
+}
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
