@@ -3,15 +3,18 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: "Montserrat", sans-serif;
 }
+
 .wrapper {
     min-height: 100%;
     overflow: clip;
     display: flex;
     flex-direction: column;
 }
+
 [class*="__container"] {
     max-width: 1230px;
     margin: 0 auto;
@@ -34,22 +37,26 @@ body {
     padding-bottom: 25px;
     z-index: 5;
 }
+
 .header__body {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
 }
+
 .logo-header {
     display: flex;
     align-items: center;
     gap: 6px;
 }
+
 .logo-header__icon {
     width: 44px;
     height: 44px;
     flex-shrink: 0;
 }
+
 .logo-header__text {
     font-size: 18px;
     font-weight: 700;
@@ -58,19 +65,22 @@ body {
     white-space: nowrap;
     transition: color 0.15s ease-in-out;
 }
+
 .menu__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0px 30px;
+    gap: 5px 30px;
 }
+
 .menu__link {
-    font-size: 13px; 
+    font-size: 13px;
     font-weight: 500;
     line-height: 1.5;
     text-transform: uppercase;
     position: relative;
 }
+
 .menu__link::before {
     content: "";
     position: absolute;
@@ -81,13 +91,15 @@ body {
     background-color: #F26522;
     transition: width 0.3s ease-in-out;
 }
+
 .header__btn {
     display: flex;
     align-items: center;
     gap: 8px;
 }
+
 .btn {
-    background-color: #F26522; 
+    background-color: #F26522;
     color: white;
     padding: 8px 30px;
     line-height: 1.5;
@@ -98,19 +110,23 @@ body {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
     border: 1px solid transparent;
 }
+
 .btn svg {
     overflow: visible;
 }
-.btn svg path{
+
+.btn svg path {
     will-change: transform;
     transition: transform 0.4s ease-in-out, fill 0.2s ease-in-out;
 
 }
-.header__btn-burger {
+
+.header__actions {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .icon-menu {
     display: none;
     position: relative;
@@ -119,6 +135,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
+
 .icon-menu::before,
 .icon-menu::after,
 .icon-menu span {
@@ -130,103 +147,120 @@ body {
     left: 0;
     transition: all 0.3s ease-in-out;
 }
+
 .icon-menu::before {
     top: 0;
 }
+
 .icon-menu::after {
     bottom: 0;
 }
+
 .icon-menu span {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .menu-open .icon-menu::before {
     transform: rotate(45deg) translateY(-1px);
     top: 50%;
 }
+
 .menu-open .icon-menu::after {
     transform: rotate(-45deg) translateY(1px);
     bottom: 50%;
 }
+
 .menu-open .icon-menu span {
     opacity: 0;
 }
+
 @media (max-width: 859px) {
     .logo-header__text {
         display: none;
     }
 }
+
 @media (max-width: 613px) {
     .icon-menu {
-        display: block !important;
+        display: block;
     }
+
     .logo-header__text {
         display: block;
     }
+
     .menu {
         position: fixed;
         top: 0;
         right: -100%;
         width: 100%;
-        height: 100vh; /* якщо вказати проценти, то воно не буде коректно працювати */
-        background-color: #ffc277;
+        height: 100vh;
+        /* якщо вказати проценти, то воно не буде коректно працювати */
+        background-color: #000000;
         color: white;
         padding-top: 120px;
         padding-right: 20px;
         transition: right 0.3s cubic-bezier(0.6, 0.5, 0.2, 1);
         z-index: -1;
+        overflow: auto;
+        padding-bottom: 15px
     }
+
     .menu::before {
         content: "";
         position: fixed;
-        right: -100%;
+        left: 0;
         top: 0;
         width: 100%;
         height: 100%;
         background-color: white;
-        border-bottom: 2px solid black;
-        transition: right 0.3s cubic-bezier(0.6, 0.5, 0.2, 1);
+        z-index: 1;
     }
+
     .menu__list {
         flex-direction: column;
         align-items: flex-end;
         gap: 15px;
     }
-    .menu__link{
+
+    .menu__link {
         font-size: 22px;
-        color: black;
     }
 
     .menu-open .menu {
         right: 0;
     }
-    .menu-open .menu::before {
-        right: 0;
-    }
 }
+
 @media (max-width: 485px) {
     .logo-header__text {
         display: none;
     }
+
     .header__body {
         gap: 20px;
     }
 }
+
 @media (any-hover: hover) {
     .menu__link:hover::before {
-        width: 100%;  
+        width: 100%;
     }
+
     .btn:hover {
         background-color: #ffefdf;
         color: #F26522;
-        border: 1px solid #F26522;   
+        border: 1px solid #F26522;
     }
+
     .btn:hover svg path {
         fill: #F26522;
-        transform: translateX(5px);       
+        transform: translateX(5px);
     }
+
     .logo-header:hover .logo-header__text {
-        color: #F26522;   
+        color: #F26522;
     }
 }
 
@@ -234,7 +268,7 @@ body {
 /* ______________________________________________________________________________________________________________________________________________________________________________________________________ */
 
 
-.wrapper > main {
+.wrapper>main {
     flex-grow: 1;
 }
 
@@ -242,5 +276,4 @@ body {
 /* ______________________________________________________________________________________________________________________________________________________________________________________________________ */
 
 
-.footer {
-}
+.footer {}
