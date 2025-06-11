@@ -15,7 +15,6 @@ html {
 .wrapper {
     display: flex;
     flex-direction: column;
-
     min-height: 100%;
     overflow: clip;
 }
@@ -29,7 +28,9 @@ html {
 }
 .featured-products {
     font-family: "Poppins", sans-serif;
-     font-size: 14px;
+    font-size: 14px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .featured-products__body {
     display: grid;
@@ -100,12 +101,12 @@ html {
     white-space: nowrap;
     width: 162px;
 }
-.btn svg path {
+.featured-btn svg path {
     transition: stroke 0.3s ease-in-out;
 }
-.btn svg {
+.featured-btn svg {
     will-change: transform;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.6s ease-in-out;
 }
 .featured-top-banner__img {
     width: 100%;
@@ -116,7 +117,7 @@ html {
     aspect-ratio: 248/335;
 }
 
-@media (any-hover: hover) {
+@media (any-hover: hover) and (pointer: fine) {
     .featured-btn:hover {
         background-color: #00B207;
         color: #fff;   
@@ -212,7 +213,7 @@ html {
     color: #999;
 }
 
-@media (any-hover: hover) {
+@media (any-hover: hover) and (pointer: fine) {
     .goods-card:hover {
         border: 1px solid #2C742F;
         box-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
@@ -241,7 +242,7 @@ html {
         color: #2C742F;                                                                   
     }
 }
-@media (pointer: coarse) {
+@media (any-hover: none) and (pointer: coarse) {
     .goods-card__icons {
         opacity: 1;
         visibility: visible;
@@ -313,7 +314,7 @@ html {
     visibility: hidden;
 }
 
-@media (any-hover: hover) {
+@media (any-hover: hover) and (pointer: fine) {
     .goods-item:hover {
         border: 1px solid #2C742F;
         box-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
@@ -339,7 +340,7 @@ html {
                     visibility 0.3s ease-in-out;   
     }
 }
-@media (pointer: coarse) {
+@media (any-hover: none) and (pointer: coarse) {
     .goods-item__icons {
         opacity: 1;
         visibility: visible;
