@@ -51,9 +51,9 @@
                                 Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.
                             </h1>
 
-                            <div class="article__author author" aria-label="article author information">
+                            <div class="article__author author">
                                 <div class="author__info author-info">
-                                    <img src="" alt="" class="author-info__img">
+                                    <img src="img/article-author-image.avif" alt="A woman with short hair, wearing a white lab coat and a denim shirt, smiling in a bright room with a window behind her." class="author-info__img">
 
                                     <div class="author-info__content">
                                         <p class="author-info__name">
@@ -197,7 +197,7 @@
                                     <label for="comment-textarea" class="contact-information__label">
                                         Message
                                     </label>
-                                    <input id="comment-textarea" type="textarea" name="form[]" required>
+                                    <textarea id="comment-textarea" name="form[]"></textarea>
                                 </div> 
 
                                 <div class="comment-fieldset__remember-user remember-user">
@@ -550,71 +550,79 @@
                                 Recently Added
                             </h3>
 
-                            <aritcle class="recently-added__article recently-added-article">
-                                <img src="img/recently-added-image1.avif" alt="Two sliced mango halves arranged neatly with tropical leaves and flowers on a white background." class="recently-added-article">
+                            <ul class="recently-added__list">
+                                <li class="recently-added__item">
+                                    <aritcle class="recently-added__article recently-added-article">
+                                        <img src="img/recently-added-image1.avif" alt="Two sliced mango halves arranged neatly with tropical leaves and flowers on a white background." class="recently-added-article">
 
-                                <div class="recently-added-article__content">
-                                    <h4 class="recently-added-article__title">
-                                        <a href="#" class="recently-added-article__title-link">
-                                            Curabitur porttitor orci eget nequ accumsan.
-                                        </a>
-                                    </h4>
+                                        <div class="recently-added-article__content">
+                                            <h4 class="recently-added-article__title">
+                                                <a href="#" class="recently-added-article__title-link">
+                                                    Curabitur porttitor orci eget nequ accumsan.
+                                                </a>
+                                            </h4>
 
-                                    <time class="recently-added-article__posting-time" datetime="2021-04-25">
-                                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                                            <path d="M14.25 3.5H3.75C2.92157 3.5 2.25 4.17157 2.25 5V15.5C2.25 16.3284 2.92157 17 3.75 17H14.25C15.0784 17 15.75 16.3284 15.75 15.5V5C15.75 4.17157 15.0784 3.5 14.25 3.5Z" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M6 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M2.25 8H15.75" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                          </svg>
-                                        Apr 25, 2021
-                                    </time>
-                                </div>
-                            </aritcle>
+                                            <time class="recently-added-article__posting-time" datetime="2021-04-25">
+                                                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                    <path d="M14.25 3.5H3.75C2.92157 3.5 2.25 4.17157 2.25 5V15.5C2.25 16.3284 2.92157 17 3.75 17H14.25C15.0784 17 15.75 16.3284 15.75 15.5V5C15.75 4.17157 15.0784 3.5 14.25 3.5Z" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M12 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M6 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M2.25 8H15.75" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                Apr 25, 2021
+                                            </time>
+                                        </div>
+                                    </aritcle>
+                                </li>
 
-                            <aritcle class="recently-added__article recently-added-article">
-                                <img src="img/recently-added-image2.avif" alt="Two ripe oranges with green leaves attached, placed against a light wall." class="recently-added-article">
+                                <li class="recently-added__item">
+                                    <aritcle class="recently-added__article recently-added-article">
+                                        <img src="img/recently-added-image2.avif" alt="Two ripe oranges with green leaves attached, placed against a light wall." class="recently-added-article">
 
-                                <div class="recently-added-article__content">
-                                    <h4 class="recently-added-article__title">
-                                        <a href="#" class="recently-added-article__title-link">
-                                            Donec mattis arcu faucibus suscipit viverra.
-                                        </a>
-                                    </h4>
+                                        <div class="recently-added-article__content">
+                                            <h4 class="recently-added-article__title">
+                                             <a href="#" class="recently-added-article__title-link">
+                                                 Donec mattis arcu faucibus suscipit viverra.
+                                                </a>
+                                            </h4>
 
-                                    <time class="recently-added-article__posting-time" datetime="2021-04-25">
-                                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                                            <path d="M14.25 3.5H3.75C2.92157 3.5 2.25 4.17157 2.25 5V15.5C2.25 16.3284 2.92157 17 3.75 17H14.25C15.0784 17 15.75 16.3284 15.75 15.5V5C15.75 4.17157 15.0784 3.5 14.25 3.5Z" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M6 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M2.25 8H15.75" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                          </svg>
-                                        Apr 25, 2021
-                                    </time>
-                                </div>
-                            </aritcle>
+                                            <time class="recently-added-article__posting-time" datetime="2021-04-25">
+                                                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                    <path d="M14.25 3.5H3.75C2.92157 3.5 2.25 4.17157 2.25 5V15.5C2.25 16.3284 2.92157 17 3.75 17H14.25C15.0784 17 15.75 16.3284 15.75 15.5V5C15.75 4.17157 15.0784 3.5 14.25 3.5Z" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M12 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M6 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M2.25 8H15.75" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                Apr 25, 2021
+                                            </time>
+                                        </div>
+                                    </aritcle>
+                                </li>
 
-                            <aritcle class="recently-added__article recently-added-article">
-                                <img src="img/recently-added-image3.avif" alt="A white ceramic bowl filled with fresh blueberries on a dark textured surface." class="recently-added-article">
+                                <li class="recently-added__item">
+                                    <aritcle class="recently-added__article recently-added-article">
+                                        <img src="img/recently-added-image3.avif" alt="A white ceramic bowl filled with fresh blueberries on a dark textured surface." class="recently-added-article">
 
-                                <div class="recently-added-article__content">
-                                    <h4 class="recently-added-article__title">
-                                        <a href="#" class="recently-added-article__title-link">
-                                            Quisque posuere tempus rutrum. Integer velit ex.
-                                        </a>
-                                    </h4>
+                                        <div class="recently-added-article__content">
+                                            <h4 class="recently-added-article__title">
+                                                <a href="#" class="recently-added-article__title-link">
+                                                 Quisque posuere tempus rutrum. Integer velit ex.
+                                                </a>
+                                            </h4>
 
-                                    <time class="recently-added-article__posting-time" datetime="2021-04-25">
-                                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                                            <path d="M14.25 3.5H3.75C2.92157 3.5 2.25 4.17157 2.25 5V15.5C2.25 16.3284 2.92157 17 3.75 17H14.25C15.0784 17 15.75 16.3284 15.75 15.5V5C15.75 4.17157 15.0784 3.5 14.25 3.5Z" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M12 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M6 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M2.25 8H15.75" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
-                                          </svg>
-                                        Apr 25, 2021
-                                    </time>
-                                </div>
-                            </aritcle>
+                                            <time class="recently-added-article__posting-time" datetime="2021-04-25">
+                                                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                    <path d="M14.25 3.5H3.75C2.92157 3.5 2.25 4.17157 2.25 5V15.5C2.25 16.3284 2.92157 17 3.75 17H14.25C15.0784 17 15.75 16.3284 15.75 15.5V5C15.75 4.17157 15.0784 3.5 14.25 3.5Z" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M12 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M6 2V5" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M2.25 8H15.75" stroke="#00B307" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                Apr 25, 2021
+                                            </time>
+                                        </div>
+                                    </aritcle>
+                                </li>
+                            </ul>    
                         </section>
                     </div>
                 </aside>
