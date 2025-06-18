@@ -109,12 +109,14 @@ html {
     transition: transform 0.6s ease-in-out;
 }
 .featured-top-banner__img {
+    background-color: #c5c5c5;
     width: 100%;
     object-fit: cover;
+    aspect-ratio: 248/341;
 }
 .featured-top-banner__img img {
     width: 100%;
-    aspect-ratio: 248/335;
+    aspect-ratio: 248/341;
 }
 
 @media (any-hover: hover) and (pointer: fine) {
@@ -149,6 +151,7 @@ html {
 .goods-card__img {
      width: 100%;
      object-fit: cover;
+     aspect-ratio: 246/246;
 }
 .goods-card__img img {
     aspect-ratio: 246/246;
@@ -354,6 +357,7 @@ html {
     }
 }
 
+
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 .featured-bottom-banner {
@@ -374,8 +378,10 @@ html {
     align-self: center;
 }
 .featured-bottom-banner__img {
+    background-color: #c5c5c5;
     width: 100%;
     object-fit: cover;
+    aspect-ratio: 312/430;
 }
 .featured-bottom-banner__img img {
     width: 100%;
@@ -434,12 +440,14 @@ html {
     line-height: 1.1;
 }
 .floral__left {
+    order: 1;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     gap: 16px;
 }
 .floral__right {
+    order: 2;
     padding-top: 52px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -454,6 +462,8 @@ html {
 }
 .card-floral__img-link {
     overflow: hidden;
+    aspect-ratio: 401/427;
+    background-color: #707070;
 }
 .card-floral__img {
     width: 100%;
@@ -522,6 +532,8 @@ html {
     cursor: pointer;
     width: fit-content;
     margin-top: 40px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 .floral-btn::before {
     content: "";
