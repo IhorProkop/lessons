@@ -172,12 +172,16 @@
                         </article> 
 
                         <form class="form" aria-label="Post Comments Form" action="/post-comments" method="post" enctype="multipart/form-data">
-                            <fieldset class="form__comment-fieldset comment-fieldset">
-                                <legend class="comment-fieldset__title">
+                            <section class="form__comment-section comment-section">
+                                <h2 class="comment-section__title">
                                     Leave a Comment
-                                </legend>
+                                </h2>
 
-                                <div class="comment-fieldset__contact-information contact-information">
+                                <fieldset class="comment-section__contact-information contact-information">
+                                    <legend>
+                                        Contact Information
+                                    </legend>
+                                    
                                     <div class="contact-information__fullname">
                                         <label for="form-full-name" class="contact-information__label">
                                             Full Name
@@ -191,26 +195,26 @@
                                         </label>
                                         <input autocomplete="on" id="form-email" type="email" name="form[]" required>
                                     </div>
-                                </div>
+                                </fieldset>
 
-                                <div class="comment-fieldset__comment-text comment-text">
+                                <div class="comment-section__comment-text comment-text">
                                     <label for="comment-textarea" class="contact-information__label">
                                         Message
                                     </label>
                                     <textarea id="comment-textarea" name="form[]"></textarea>
                                 </div> 
 
-                                <div class="comment-fieldset__remember-user remember-user">
+                                <div class="comment-section__remember-user remember-user">
                                     <input type="checkbox" id="form-remember-user" name="form[]" value="yes">
                                     <label for="form-remember-user" class="remember-user__label">
                                         Save my name and email in this browser for the next time I comment.
                                     </label>
                                 </div>
 
-                                <button class="comment-fieldset__btn btn" type="submit">
+                                <button class="comment-section__btn btn" type="submit">
                                     Post Comments
                                 </button>
-                            </fieldset>
+                            </section>
                         </form>
 
                         <section class="article__posted-comments posted-comments">
